@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=iso-8859-1" />
+<title>E-Mail Digest: Maian Support - Documentation</title>
+<link href="stylesheet.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/menu.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/scrolltotop.js"></script>
+<link href="menu.css" rel="stylesheet" type="text/css" />
+<link rel="SHORTCUT ICON" href="favicon.ico" />
+</head>
+
+<body>
+
+<div id="topBar">
+
+  <div class="inner">
+  
+    <div class="left">
+      <p class="doclinks">Documentation&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
+      <a href="https://www.facebook.com/maianscripts" onclick="window.open(this);return false"><img src="images/facebook.png" alt="Maian Script World on Facebook" title="Maian Script World on Facebook" /></a>
+      <a href="https://twitter.com/#!/maianscripts" onclick="window.open(this);return false"><img src="images/twitter.png" alt="Maian Script World on Twitter" title="Maian Script World on Twitter" /></a>
+      <a href="http://www.youtube.com/user/maianscripts" onclick="window.open(this);return false"><img src="images/youtube.png" alt="Maian Script World on YouTube" title="Maian Script World on YouTube" /></a>
+      <a href="http://www.maiansupport.com/rss.html" onclick="window.open(this);return false"><img src="images/rssfeeds.png" alt="Maian Support Updates" title="Maian Support Updates" /></a>
+      </p>
+    </div>
+  
+    <div class="right">
+      <p>
+      <a href="http://www.maiansupport.com/purchase.html" title="Purchase Full Version" onclick="window.open(this);return false">Purchase Full Version</a> &#8226;
+      <a href="upgrades.html" title="Upgrades">Upgrades</a> &#8226;      
+      <a href="bugs.html" title="Report Bug">Report Bug</a> &#8226;      
+      <a href="other_1.html" title="Support">Support</a> &#8226;
+      <a href="http://www.maianscriptworld.co.uk" title="Other Free Scripts">Other Free Scripts</a>
+      </p>
+    </div>
+  
+  </div>
+  
+  <br class="clear" />
+
+</div>
+
+<div id="header">
+  
+  <div class="left">
+    <p><a href="index.html"><img src="images/logo.png" alt="Maian Support - Documentation" title="Maian Support - Documentation" /></a></p>
+  </div>
+  
+  <div class="right">
+   <p>
+     <span style="color:#354A50;margin:0 0 7px 0">COMMERCIAL VERSION INCLUDES:</span>
+     <span>- FREE upgrades for life</span>
+     <span>- One time payment, NO subscriptions</span>
+     <span>- ALL features unlocked and unlimited</span>
+   </p>
+  </div>
+  
+  <br class="clear" />
+  
+</div>
+
+<div id="wrapper">
+
+<div id="menu">
+ <script type="text/javascript" src="js/nav.js"></script>
+</div>
+
+<div class="homeWrapper">
+
+  <div id="innerArea">
+  
+    <p class="head">Overview</p>
+    
+    <p class="info">The email digest is list of current open tickets/disputes, sent via email. Digest can be triggered via a cron and run as many times as needed to specified users.</p>
+    
+    <p class="head">Commercial Licence Required</p>
+    
+    <p class="info">The email digest is only available in the commercial version.</p>
+    
+    <p class="head">Email Digest Contents</p>
+    
+    <p class="info">The email digest transmits the following:<br /><br />
+    <b>New open tickets - no responses<br />
+    Open tickets awaiting admin response<br />
+    Open tickets awaiting visitor response<br />
+    New open disputes - no responses<br />
+    Open disputes awaiting admin response<br />
+    Open disputes awaiting visitor response</b><br /><br />
+    The name of the person who opened the ticket and the priority is also included. For disputes the count of many users are in the dispute is also included. You can also have a direct
+    link appear beneath each ticket which would take you straight to the ticket on login.<br /><br />
+    Note that users will only get information on tickets they have department access for. The administrative user receives all by default.
+    </p>
+    
+    <p class="head">Enable/Disable Links</p>
+    
+    <p class="info">If enabled, adds a direct link beneath each ticket, which would take you straight to the ticket on admin login. This is dependant on 2 options being enabled:<br /><br />
+    In 'control/user-defined/defined2.inc.php' enable the links via:<br /><br />
+    <b>EMAIL_DIGEST_LINKS</b> (Set to 1 to enable)<br /><br />
+    The option to direct the user to the ticket must also be enabled. In the 'admin/control/user-defined/defined.inc.php' file, make sure the following is enabled:<br /><br />
+    <b>REDIRECT_TO_TICKET_ON_LOGIN</b><br /><br />
+    If the links are enabled, but 'REDIRECT_TO_TICKET_ON_LOGIN' isn`t, the links will appear, but the user won`t be directed to the ticket.
+    </p>
+    
+    <p class="head">Enable/Disable Mail For Zero Counts</p>
+    
+    <p class="info">By default, mail is always sent, even if there are no tickets and no disputes. If you prefer the system not to send emails if there are no tickets or disputes,
+    update the following in the 'the 'control/user-defined/defined2.inc.php' file.<br /><br />
+    <b>EMAIL_DIGEST_ZERO_COUNT_MAIL</b> (Set to 0 to disable)
+    </p>
+    
+    <p class="head">E-Mail Template</p>
+    
+    <p class="info">The email template for the email digest is located at:<br /><br />
+    <b>templates/language/english/email/email-digest.txt</b><br /><br />
+    You can remove any areas you don`t need.
+    </p>
+    
+    <p class="head">Email Digest Cron</p>
+    
+    <p class="info">The email digest should be set up as a cron to run automatically. Your cron need to point to the 'email-digest.php' file in the root of your support system.<br /><br />
+    Some of the following may work as commands, but again, contact your host to check.<br /><br />
+    <span class="highblock">/usr/local/bin/php /home/admin/domains/yourdomain.co.uk/public_html/helpdesk/email-digest.php<br />
+    php q /home/admin/domains/yourdomain.co.uk/public_html/helpdesk/email-digest.php<br />
+    /usr/local/bin/php q /home/admin/domains/yourdomain.co.uk/public_html/helpdesk/email-digest.php<br />
+    cmd /k C:\Windows\php\php.exe "C:\website\email-digest.php" (Windows)</span><br />
+    To check the digest is working ok, you can also run it manually in any web browser.
+    </p>
+    
+    <p class="head">Omit Users from Receiving Email Digest</p>
+    
+    <p class="info">If you wish you can omit users from receiving the email digest. Note that if their notification preference is disabled in admin, they won`t receive the digest anyway. However,
+    you may have a scenario where you want standard ticket notifications to be sent, but not the email digest.<br /><br />
+    To do this open the 'control/user-defined/defined2.inc.php' file and find the following:<br /><br />
+    <b>OMIT_USERS_EMAIL_DIGEST</b><br /><br />
+    Enter ID number or comma delimited set for users you don`t want to receive the digest. You can get the ID numbers from the admin area:<br /><br />
+    <img src="images/helpdesk/54.jpg" class="sysimg" alt="" title="" /><br /><br />
+    Here are some example:<br /><br />
+    <b>define('OMIT_USERS_EMAIL_DIGEST', '2');</b> // Blocks user 2 from receiving email digests<br />
+    <b>define('OMIT_USERS_EMAIL_DIGEST', '2,7');</b> // Blocks users 2 &amp; 7 from receiving email digests<br />
+    </p>
+    
+    <p class="head">Cron Trigger Override</p>
+    
+    <p class="info">
+    If the system fails when you setup the cron, and ioncube returns an error saying the system is &quot;encoded for another domain&quot;, you can set up an override:<br /><br />
+  
+    <b>1</b>: Create a new .php file in a text editor with the following code:<br /><br />
+    &lt;?php<br />
+    $ch = curl_init();<br />
+    curl_setopt($ch, CURLOPT_URL, "http://www.yoursite.com/helpdesk/email-digest.php");<br />
+    curl_setopt ($ch, CURLOPT_HEADER, 0);<br />
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);<br /> 
+    $output = curl_exec($ch);<br />
+    curl_close($ch);<br />
+    ?&gt;<br /><br />
+     
+    <b>2</b>: Make sure the url path points to your own 'email-digest.php' file. Save and upload alongside main index.php file.<br /><br />
+    
+    <b>3</b>: Change your cron job in your control panel to access this new .php file. This will send a trigger to the 'email-digest.php' file. <br /><br />
+  
+    <b>NOTE</b>: CURL must be installed for this to run.
+    </p>
+    
+  </div>  
+  
+</div>  
+
+</div>
+
+<div id="footer">
+  <p class="copyright">
+   <b>Powered by</b>: <a href="http://www.maiansupport.com" title="Maian Support" onclick="window.open(this);return false">Maian Support</a>
+   &copy; 2005-<script type="text/javascript">var d = new Date(); document.write(d.getFullYear());</script> <a href="http://www.maianscriptworld.co.uk" onclick="window.open(this);return false" title="Maian Script World">Maian Script World</a>. All Rights Reserved  </p>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+jQuery(document).ready(function() {
+ jQuery().UItoTop();
+});
+//]]>
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+Hello,
+
+You are receiving this e-mail because your tickets have been moved to your requested new e-mail addresses.
+
+You can now view your tickets with the following e-mail:
+
+{TEMAIL}
+
+The following e-mail has now been deleted from our system:
+
+{FEMAIL}
+
+We recommend you delete this e-mail for security.
+
+
+Kind regards,
+
+------------------------------------
+{WEBSITE_NAME}
+{WEBSITE_URL}

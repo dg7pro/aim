@@ -1,0 +1,26 @@
+  <div class="addDispute" id="name_{id}">
+      
+    <div class="left">
+        
+      <label>{name}</label>
+      <input type="text" maxlength="250" class="box" name="name[]" value="" tabindex="{tab}" />
+        
+    </div>
+  
+    <div class="middle">
+      
+      <label>{email}</label>
+      <input type="text" maxlength="250" class="box" name="email[]" value="" tabindex="{tab}" />
+        
+    </div>
+    
+    <div class="right">
+      
+      <input id="on_{id}" class="button" type="button" name="+" value="+" onclick="ms_addDisputeUser('{id}')" />
+      <input id="off_{id}" class="button" type="button" name="-" value="-" onclick="ms_removeDisputeUser('{id}')" />
+        
+    </div>
+      
+    <br class="clear" />
+  
+  </div>

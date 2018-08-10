@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout name="desktop">
+	<!--Extra css load for this layout-->
+	<blocks name="top" style="xhtml">
+		<block name="absolute" type="modules" style="raw">absolute</block>
+		<block name="top-panel" type="modules" style="raw" main-inner="1">top-panel</block>
+		<block name="header" type="header" main-inner="1"></block>
+		
+	</blocks>
+	<blocks name="middle">
+	</blocks>
+	<blocks name="bottom" style="xhtml">
+		
+		<block name="footer" type="footer"></block>
+	</blocks>
+</layout>

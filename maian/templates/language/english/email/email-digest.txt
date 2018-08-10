@@ -1,0 +1,58 @@
+E-MAIL DIGEST
+==================
+
+- {COUNT} open ticket(s)
+- {COUNT_DIS} open dispute(s)
+- {COUNT_ASG} ticket(s) awaiting assignment
+
+---------------------------------------------------
+Tickets awaiting user/staff assignment:
+---------------------------------------------------
+
+{ASSIGN}
+
+---------------------------------------------------
+New Tickets Awaiting Admin Response:
+---------------------------------------------------
+
+{NEW}
+
+---------------------------------------------------
+Tickets Awaiting Admin Response:
+---------------------------------------------------
+
+{TICK_ADMIN}
+
+---------------------------------------------------
+Tickets Awaiting Visitor Response:
+---------------------------------------------------
+
+{TICK_VIS}
+
+---------------------------------------------------
+New Disputes Awaiting Admin/Other Response:
+---------------------------------------------------
+
+{NEW_DIS}
+
+---------------------------------------------------
+Disputes Awaiting Admin/Other Response:
+---------------------------------------------------
+
+{DIS_ADMIN}
+
+---------------------------------------------------
+Disputes Awaiting Visitor Response:
+---------------------------------------------------
+
+{DIS_VIS}
+
+
+---------------------------------------------------
+
+Note that some of the above may have been updated since this message was sent.
+
+Support administration centre:
+{WEBSITE_URL}/{ADMIN_FOLDER}/
+
+E-Mail Digest Sent: {DATE} @ {TIME}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="library" version="3.1" method="upgrade">
+	<name>ITPrism Library</name>
+	<libraryname>itprism</libraryname>
+	<author>Todor Iliev</author>
+	<authorEmail>todor@itprism.com</authorEmail>
+    <authorUrl>http://itprism.com</authorUrl>
+	<copyright>Copyright (C) 2013 Todor Iliev ( ITPrism.com ). All rights reserved.</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<packager>ITPrism</packager>
+	<packagerurl>http://itprism.com</packagerurl>
+	<version>1.8</version>
+	<creationDate>15 September, 2013</creationDate>
+	<description><![CDATA[
+    <p><a href="http://itprism.com/free-joomla-extensions/others/software-development-kit" target="_blank">ITPrism Library</a> is a collection of PHP classes used in many ITPrism extensions.</p>
+    <p>Invest in the extension improvement. You can <a href="http://itprism.com/sponsorship" target="_blank">sponsor the extension via SMS, PayPal or Bitcoin</a>.</p>
+    <p><a href="http://itprism.com/" target="_blank">Subscribe for the newsletter</a> to receive information about updates and new ITPrism extensions.</p>]]></description>
+	<files>
+	    <folder>bitcoin</folder>
+	    <folder>controller</folder>
+        <folder>file</folder>
+        <folder>integrate</folder>
+        <folder>payment</folder>
+        <folder>paypal</folder>
+        <folder>ui</folder>
+        <folder>utilities</folder>
+        <folder>video</folder>
+        <folder>xml</folder>
+        <file>errors.php</file>
+		<file>index.html</file>
+        <file>string.php</file>
+		<file>version.php</file>
+	</files>
+	
+    <updateservers>
+        <server type="extension" priority="1" name="ITPrism Library Updates">http://updates.itprism.com/itprism-library.xml</server>
+    </updateservers>
+    
+</extension>

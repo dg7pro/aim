@@ -1,0 +1,26 @@
+NEW TICKET SUCCESSFULLY CREATED ({DATE})
+===================================================================
+
+Hello {NAME},
+
+Thank you for your recent support ticket.
+
+Your Ticket details:
+----------------------------
+
+Ticket ID: #{TICKET}
+Subject: {SUBJECT}
+Department: {DEPT}
+Priority: {PRIORITY}
+
+An e-mail will follow when a response has been made by our support team. 
+
+To view your tickets at any time log in at:
+{WEBSITE_URL}/
+
+
+Kind regards,
+
+------------------------------------
+{WEBSITE_NAME}
+{WEBSITE_URL}

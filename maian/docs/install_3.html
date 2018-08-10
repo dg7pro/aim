@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=iso-8859-1" />
+<title>Template Integration: Maian Support - Documentation</title>
+<link href="stylesheet.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/menu.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/scrolltotop.js"></script>
+<link href="menu.css" rel="stylesheet" type="text/css" />
+<link rel="SHORTCUT ICON" href="favicon.ico" />
+</head>
+
+<body>
+
+<div id="topBar">
+
+  <div class="inner">
+  
+    <div class="left">
+      <p class="doclinks">Documentation&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
+      <a href="https://www.facebook.com/maianscripts" onclick="window.open(this);return false"><img src="images/facebook.png" alt="Maian Script World on Facebook" title="Maian Script World on Facebook" /></a>
+      <a href="https://twitter.com/#!/maianscripts" onclick="window.open(this);return false"><img src="images/twitter.png" alt="Maian Script World on Twitter" title="Maian Script World on Twitter" /></a>
+      <a href="http://www.youtube.com/user/maianscripts" onclick="window.open(this);return false"><img src="images/youtube.png" alt="Maian Script World on YouTube" title="Maian Script World on YouTube" /></a>
+      <a href="http://www.maiansupport.com/rss.html" onclick="window.open(this);return false"><img src="images/rssfeeds.png" alt="Maian Support Updates" title="Maian Support Updates" /></a>
+      </p>
+    </div>
+  
+    <div class="right">
+      <p>
+      <a href="http://www.maiansupport.com/purchase.html" title="Purchase Full Version" onclick="window.open(this);return false">Purchase Full Version</a> &#8226;
+      <a href="upgrades.html" title="Upgrades">Upgrades</a> &#8226;      
+      <a href="bugs.html" title="Report Bug">Report Bug</a> &#8226;      
+      <a href="other_1.html" title="Support">Support</a> &#8226;
+      <a href="http://www.maianscriptworld.co.uk" title="Other Free Scripts">Other Free Scripts</a>
+      </p>
+    </div>
+  
+  </div>
+  
+  <br class="clear" />
+
+</div>
+
+<div id="header">
+  
+  <div class="left">
+    <p><a href="index.html"><img src="images/logo.png" alt="Maian Support - Documentation" title="Maian Support - Documentation" /></a></p>
+  </div>
+  
+  <div class="right">
+   <p>
+     <span style="color:#354A50;margin:0 0 7px 0">COMMERCIAL VERSION INCLUDES:</span>
+     <span>- FREE upgrades for life</span>
+     <span>- One time payment, NO subscriptions</span>
+     <span>- ALL features unlocked and unlimited</span>
+   </p>
+  </div>
+  
+  <br class="clear" />
+  
+</div>
+
+<div id="wrapper">
+
+<div id="menu">
+ <script type="text/javascript" src="js/nav.js"></script>
+</div>
+
+<div class="homeWrapper">
+
+  <div id="innerArea">
+  
+    <p class="head">Template Integration</p>
+    
+    <p class="info">
+    Maian Support utilises the Savant2/3 template engines. These make integrating the layout into your existing site relatively easy compared with none templated
+    systems. The templates for the system are located in the <b>templates</b> folder. Other HTML has been separated from the PHP code and can be found in the 
+    <b>templates/html/</b> folder.<br /><br />
+    
+    Where you see PHP variables, these should NOT be removed. Example:<br /><br /><b>&lt;?php echo $this->CODE; ?&gt;</b><br /><br />See comments in templates for certain variables. The .htm
+    template files have variable braces. ie: {brace}. These should NOT be removed either.<br /><br />
+    
+    To integrate Maian Support into your existing site design is going to require some basic knowledge of HTML. You`ll start by looking at your current HTML structure
+    and comparing it to that of Maian Support. Generally work with the header and footer first. If you don`t understand HTML, integrating into another site layout is <b>NOT</b>
+    recommended. It is also <b>NOT</b> recommended you integrate the layout using PHP includes or iframes.<br /><br />
+    The main 'index.php' files and files in the 'core' folders are encoded and cannot be changed.
+    </p>
+    
+    <p class="head">Parse Custom PHP Code from Main Index Files</p>
+    
+    <p class="info">If you want to load custom code to parse from the main index.php files, add your code to the following files:<br /><br />
+    <b>control/index-parser.php<br />
+    admin/control/index-parser.php</b>
+    </p>
+    
+    <p class="head">Add Your Own Logos</p>
+    
+    <p class="info">If you wish to add your own logos, simply overwrite the default images:<br /><br />
+    <b>templates/images/logo.png<br />
+    admin/templates/images/logo.png</b>
+    </p>
+    
+    <p class="head">E-Mail Templates</p>
+    
+    <p class="info">
+    Besides HTML templates, Maian Support also makes it easy to modify e-mail data. The e-mail templates are located at:<br /><br />
+    <b>templates/language/english/email/*.txt</b><br />
+    <b>templates/language/english/admin-email/*.txt</b> <span class="italics">(admin e-mail templates can be edited)</span><br /><br />
+    You can open these templates and add whatever text you want. A good quality text editor is recommended. DO NOT use word processors. Notepad is fine. You should be very careful NOT to remove any code between braces. ie: {name} Removing these variables
+    will cause some data not to be included in e-mails.
+    </p>
+    
+    <p class="head">HTML in E-Mail Templates</p>
+    
+    <p class="info">
+    If you want to use <a href="http://www.w3schools.com/html/" onclick="window.open(this);return false">HTML</a> in emails, enable the option in the &quot;control/user-defined/defined.inc.php&quot; file:<br /><br />
+    <b>define('HTML_EMAILS', 1);</b><br /><br />
+    If you enable this you need to change the email .txt files and use standard <a href="http://www.w3schools.com/html/" onclick="window.open(this);return false">html</a> code. All carriage returns must be replaced with html <a href="http://www.w3schools.com/tags/tag_br.asp" onclick="window.open(this);return false">line breaks</a> etc
+    </p>
+    
+    <p class="head">Colours &amp; Appearance</p>
+    
+    <p class="info">
+     For many people, changing the colours and a few default images is good enough. Maian Support utilises Cascading Stylesheets for colour display. ALL of the colours you
+     see for the default design are in the stylesheets. Maian Support has the following stylesheets, all of which can be edited in a good text editor.<br /><br />
+     
+     <b>stylesheet.css</b> <span class="italics">(Frontend)</span><br />
+     <b>greybox.css</b> <span class="italics">(Frontend - Popup Window Styling Only)</span><br />
+     <b>ie.css</b> <span class="italics">(Internet Explorer Hacks)</span><br /><br />
+     <b>admin/stylesheet.css</b> <span class="italics">(Admin)</span><br />
+     <b>admin/jquery-ui.css</b> <span class="italics">(Admin - JQuery UI Styles. etc Date Picker)</span><br />
+     <b>admin/menu.css</b> <span class="italics">(Admin - Menu)</span><br />
+     <b>admin/greybox.css</b> <span class="italics">(Admin - Popup Window Styling Only)</span><br /><br />
+     
+     Edit these and choose whichever colours you want.
+    </p>
+    
+    <p class="head">Images</p>
+    
+    <p class="info">Images are located in the following folders:<br /><br />
+     
+     <b>templates/images/</b> <span class="italics">(Frontend)</span><br />
+     <b>admin/templates/images/</b> <span class="italics">(Admin)</span>    
+     
+    </p>
+    
+    <p class="head">References &amp; Reading</p>
+    
+    <p class="info">
+    <a href="http://www.google.co.uk/#hl=en&amp;q=html" onclick="window.open(this);return false">HTML (Hypertext Markup Language)</a><br />
+    <a href="http://www.google.co.uk/#hl=en&amp;q=cascading+stylesheets" onclick="window.open(this);return false">CSS (Cascading Stylesheets)</a><br />
+    <a href="http://www.google.co.uk/#hl=en&amp;q=free+text+editors" onclick="window.open(this);return false">Free Text Editors</a><br />
+    </p>
+    
+    <p class="head">Help Tips</p>
+    
+    <p class="info">The same or additional information may be provided by hovering your cursor over the <img class="help_img" src="images/help.png" alt="" title="" /> image next to each heading in the admin area if applicable.</p>
+    
+  </div>
+  
+</div>  
+
+</div>
+
+<div id="footer">
+  <p class="copyright">
+   <b>Powered by</b>: <a href="http://www.maiansupport.com" title="Maian Support" onclick="window.open(this);return false">Maian Support</a>
+   &copy; 2005-<script type="text/javascript">var d = new Date(); document.write(d.getFullYear());</script> <a href="http://www.maianscriptworld.co.uk" onclick="window.open(this);return false" title="Maian Script World">Maian Script World</a>. All Rights Reserved  </p>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+jQuery(document).ready(function() {
+ jQuery().UItoTop();
+});
+//]]>
+</script>
+</body>
+</html>

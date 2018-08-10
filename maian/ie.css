@@ -1,0 +1,11 @@
+#ticketsWrapper .ticketWrapper .info_dispute p,
+#ticketsWrapper .ticketWrapper_high .info_dispute p {
+  padding:7px 10px 10px 30px;
+  background:#f6f6f6 url(templates/images/dispute.png) no-repeat 1% 60%;
+}
+
+#ticketsWrapper .ticketWrapper .info_ticket p,
+#ticketsWrapper .ticketWrapper_high .info_ticket p {
+  padding:7px 10px 10px 30px;
+  background:#f6f6f6 url(templates/images/ticket.png) no-repeat 1% 50%;
+}

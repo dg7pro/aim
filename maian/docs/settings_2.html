@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=iso-8859-1" />
+<title>Imap Functions: Maian Support - Documentation</title>
+<link href="stylesheet.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/menu.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/scrolltotop.js"></script>
+<link href="menu.css" rel="stylesheet" type="text/css" />
+<link rel="SHORTCUT ICON" href="favicon.ico" />
+</head>
+
+<body>
+
+<div id="topBar">
+
+  <div class="inner">
+  
+    <div class="left">
+      <p class="doclinks">Documentation&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
+      <a href="https://www.facebook.com/maianscripts" onclick="window.open(this);return false"><img src="images/facebook.png" alt="Maian Script World on Facebook" title="Maian Script World on Facebook" /></a>
+      <a href="https://twitter.com/#!/maianscripts" onclick="window.open(this);return false"><img src="images/twitter.png" alt="Maian Script World on Twitter" title="Maian Script World on Twitter" /></a>
+      <a href="http://www.youtube.com/user/maianscripts" onclick="window.open(this);return false"><img src="images/youtube.png" alt="Maian Script World on YouTube" title="Maian Script World on YouTube" /></a>
+      <a href="http://www.maiansupport.com/rss.html" onclick="window.open(this);return false"><img src="images/rssfeeds.png" alt="Maian Support Updates" title="Maian Support Updates" /></a>
+      </p>
+    </div>
+  
+    <div class="right">
+      <p>
+      <a href="http://www.maiansupport.com/purchase.html" title="Purchase Full Version" onclick="window.open(this);return false">Purchase Full Version</a> &#8226;
+      <a href="upgrades.html" title="Upgrades">Upgrades</a> &#8226;      
+      <a href="bugs.html" title="Report Bug">Report Bug</a> &#8226;      
+      <a href="other_1.html" title="Support">Support</a> &#8226;
+      <a href="http://www.maianscriptworld.co.uk" title="Other Free Scripts">Other Free Scripts</a>
+      </p>
+    </div>
+  
+  </div>
+  
+  <br class="clear" />
+
+</div>
+
+<div id="header">
+  
+  <div class="left">
+    <p><a href="index.html"><img src="images/logo.png" alt="Maian Support - Documentation" title="Maian Support - Documentation" /></a></p>
+  </div>
+  
+  <div class="right">
+   <p>
+     <span style="color:#354A50;margin:0 0 7px 0">COMMERCIAL VERSION INCLUDES:</span>
+     <span>- FREE upgrades for life</span>
+     <span>- One time payment, NO subscriptions</span>
+     <span>- ALL features unlocked and unlimited</span>
+   </p>
+  </div>
+  
+  <br class="clear" />
+  
+</div>
+
+<div id="wrapper">
+
+<div id="menu">
+ <script type="text/javascript" src="js/nav.js"></script>
+</div>
+
+<div class="homeWrapper">
+
+  <div id="innerArea">
+  
+    <p class="head">What is E-Mail Piping?</p>
+    
+    <p class="info">
+    E-Mail piping is the name for the technique of sending e-mail messages as an input to a program rather than appending the message to the mailbox file, 
+    allowing for real-time e-mail delivery and handling. To put it simply, anyone sending an e-mail to a specified address will automatically have a ticket opened
+    for them, just as if they visited the site and entered their details on the new ticket page. For this option Maian Support utilises the PHP imap functions. It does not support local piping via
+    control panels.
+    </p>
+    
+    <p class="head">E-Mail Piping Setup</p>
+    
+    <p class="info">
+    1. Create an e-mail address that will trigger opening support tickets. An example might be 'support@yoursite.com'. Note that you never need to access this
+    mailbox manually, so setting it up in an e-mail program is not needed. For the best results, set the mailbox to read incoming mail as plain text and NOT html. You should also make sure you have virus and spam filtering on this mailbox. Ideally at
+    the server level, so that very little spam reaches the mailbox. <a href="http://www.firetrust.com/products/mailwasher-enterprise-server" title="MWES" onclick="window.open(this);return false">Mailwasher Enterprise Server</a> is terrific, low cost and pretty effective against 90% of spam.<br /><br />
+    
+    2. Log into your support admin and select 'Settings > Imap Accounts'. Create an account for the mailbox you just created.<br /><br />
+    <img src="images/helpdesk/44.jpg" class="sysimg" alt="" title="" /><br /><br />
+    
+    3. Using another of your e-mail accounts, send 2 or 3 messages to the new mailbox. But don`t read them in your email program or via webmail.<br /><br />
+    
+    4. Access the following url in your browser (replacing paths and domains where applicable):<br /><br />
+    
+    <b>http://www.yoursite.com/helpdesk/index.php?pipe=XX</b><br /><br />
+    
+    Where XX is the imap ID number from your admin area. The ID is shown next to the imap account.<br /><br />
+    <img src="images/helpdesk/45.jpg" class="sysimg" alt="" title="" /><br /><br />
+    
+    If all is working you should see tickets in your admin area and have received e-mails about new tickets. It is recommended you set to delete messages from the mailbox
+    after reading.<br /><br />
+    
+    Once you have confirmed the imap fetch is working, you`ll need to set up a crontab (or cronjob) to access this file on a scheduled basis. See below. If the fetch
+    didn`t work, check your mail settings for the mailbox.<br /><br />
+    
+    For any e-mails received via this method, the system will attempt to identify existing tickets by the ticket number in the e-mail subject. If the subject is tampered
+    with and the ticket number removed a new ticket will be opened. If this happens, use the merge option in your admin area.
+    
+    </p>
+    
+    <p class="head">Setting up Cronjob/Crontab</p>
+    
+    <p class="info">
+    Once you are sure the e-mail fetching is working ok, you should set up a scheduled task so it runs automatically. On Windows this would be via Scheduled Tasks, on Linux
+    it would be a crontab or job. Ideally you`ll want to have this run pretty frequently in case tickets are started. Up to you.<br /><br />
+    
+    Commands for crontabs vary from server to server. Here are a few that may work:<br /><br />
+    
+    <b>/usr/local/bin/php /home/admin/domains/yourdomain.co.uk/public_html/helpdesk/index.php?pipe=XX<br />
+    php q /home/admin/domains/yourdomain.co.uk/public_html/helpdesk/index.php?pipe=XX<br />
+    /usr/local/bin/php q /home/admin/domains/yourdomain.co.uk/public_html/helpdesk/index.php?pipe=XX<br />
+    cmd C:\Windows\php\php.exe &quot;C:\website\support\index.php?pipe=XX&quot; (Windows)</b><br /><br />
+    
+    Where XX is the imap ID number from your admin area.<br /><br />
+    
+    Generally, query strings are for web browsers, so you may find using them via command line fails. If this is the case, omit the query string and append a pipe array as follows:<br /><br />
+    
+    <b>cmd C:\Windows\php\php.exe C:\website\support\index.php pipe[]=XX</b><br /><br />
+    
+    So for example, if you were using id 5 you would do:<br /><br />
+    
+    <b>cmd C:\Windows\php\php.exe C:\website\support\index.php pipe[]=5</b><br /><br />
+    
+    Note the space AFTER index.php and the command is not enclosed in quotes. <b>DO NOT</b> rename 'pipe[]' here, leave it exactly as shown with the relevant ID. Example in windows:<br /><br />
+    <img src="images/helpdesk/47.jpg" class="sysimg" alt="" title="" /><br /><br />
+    You can also try setting your cron to use the 'curl' trigger:<br /><br />
+    
+    <b>curl "http://www.yoursite.com/helpdesk/index.php?pipe=5" </b>
+    
+    </p>
+    
+    <p class="head">Language Switching</p>
+    
+    <p class="info">
+    If you are utilising the <a href="install_4.html">multi language</a> options, you may have different support addresses for different languages. In this case you`ll want to load the relevant language email templates. To do
+    this append an additional var 'lang' to the cron strings:<br /><br />
+    
+    If your command line functions work with query strings do:<br />
+    <b>index.php?pipe=XX&amp;lang=XX</b><br /><br />
+    
+    Where XX is the language folder name from your 'templates/language/' folder.<br /><br />
+    
+    If you are using the pipe[] option, do the following:<br /><br />
+    <b>cmd C:\Windows\php\php.exe C:\website\support\index.php pipe[]=XX lang[]=XX</b><br /><br />
+    
+    Where XX is the language folder name from your 'templates/language/' folder. <b>NOTE</b> the spaces between each command var.<br /><br />
+    
+    So, your command would look something like:<br /><br />
+    
+    <b>index.php?pipe=5&amp;lang=german<br />
+    cmd C:\Windows\php\php.exe C:\website\support\index.php pipe[]=5 lang[]=german</b><br /><br />
+    
+    If the language folder doesn`t exist, it reverts to the default language.
+    
+    </p>
+    
+    <p class="head">Piping Query String Security Change</p>
+    
+    <p class="info">
+    The default query string for accessing manually via a browser is 'pipe' and is accessed as 'pipe=XX'. Where XX is the imap ID number from your admin area. It is recommended you change this to another word when you go live to stop any abuse being
+    aimed at this url. Open the 'control/user-defined/defined.inc.php' file and update the value of 'IMAP_URL_PARAMETER'.<br /><br />
+    
+    Example:<br />
+    define('IMAP_URL_PARAMETER', 'newcode');<br /><br />
+    <b>http://www.yoursite.com/helpdesk/index.php?newcode=XX</b>
+    </p>
+    
+    <p class="head">Cron Trigger Override</p>
+    
+    <p class="info">
+    If the system fails when you setup the cron, and ioncube returns an error saying the system is &quot;encoded for another domain&quot;, you can set up an override:<br /><br />
+  
+    <b>1</b>: Create a new .php file in a text editor with the following code:<br /><br />
+    &lt;?php<br />
+    $ch = curl_init();<br />
+    curl_setopt($ch, CURLOPT_URL, "http://www.yoursite.com/helpdesk/index.php?pipe=XX");<br />
+    curl_setopt ($ch, CURLOPT_HEADER, 0);<br />
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);<br /> 
+    $output = curl_exec($ch);<br />
+    curl_close($ch);<br />
+    ?&gt;<br /><br />
+     
+    <b>2</b>: Where XX is the imap ID number from your admin area. Make sure the url path points to your own 'index.php' file. Save and upload alongside main index.php file.<br /><br />
+    
+    <b>3</b>: Change your cron job in your control panel to access this new .php file. This will send a trigger to the 'index.php' file. Repeat the above process for each imap cron.<br /><br />
+  
+    <b>NOTE</b>: CURL must be installed for this to run.<br /><br />
+    
+    You can also try setting your cron to:<br /><br />
+    
+    <b>curl "http://www.yoursite.com/helpdesk/index.php?pipe=2" </b>
+    </p>
+    
+    <p class="head">Remote Piping</p>
+    
+    <p class="info">
+    Maian Support does not handle remote piping.
+    </p>
+    
+    <p class="head">Adding Imap Accounts</p>
+    
+    <p class="info">The free version only allows a single imap account. The commercial version allows unlimited accounts to be added.</p>
+    
+    <p class="head">Enable Imap Account</p>
+    
+    <p class="info">Enable or disable imap account</p>
+    
+    <p class="head">Mailbox Protocol</p>
+    
+    <p class="info">Imap and Pop3 protocols are supported. Specify your preference. Imap is recommended.</p>
+    
+    <p class="head">Mailbox Password</p>
+    
+    <p class="info">Enter mailbox password.</p>
+    
+    <p class="head">Mailbox Port</p>
+    
+    <p class="info">Enter mailbox port number. Usually 110 for pop3 or 143 for imap. Check with your host.</p>
+    
+    <p class="head">Mailbox Name</p>
+    
+    <p class="info">Enter name of mailbox. A common example would be "inbox". Specifying an invalid name will prevent the system from working. Use the "Show Folders" option to display mailbox folders.<br /><br />
+    <img src="images/helpdesk/56.jpg" class="sysimg" alt="" title="" /><br /><br />
+    If this doesn`t work, log into your mail account for folder names. The following screenshot is using the <a href="http://roundcube.net/" onclick="window.open(this);return false">Roundcube</a> web mail software:<br /><br />
+    <img src="images/helpdesk/57.jpg" class="sysimg" alt="" title="" />
+    </p>
+    
+    <p class="head">Mailbox Flags</p>
+    
+    <p class="info">If applicable, enter mailbox flag. Entering invalid flag or omitting required flag will cause the system to fail when fetching mail.<br /><br />Flag must begin with a slash (/). It is recommended the flag "/novalidate-cert" be used in most cases.<br /><br />If you aren`t sure, leave as is. More information <a href="http://www.php.net/manual/en/function.imap-open.php" onclick="window.open(this);return false">here</a> on the PHP website.</p>
+    
+    <p class="head">Accept Attachments</p>
+    
+    <p class="info">If tickets are started via email, do you want to accept attachments? If yes, the attachment restrictions on settings page apply.<br /><br />It is vitally important you have virus/spam filtering on the mail box you are using for e-mail fetching. See the docs for more information.</p>
+    
+    <p class="head">After Reading, Move Message to</p>
+    
+    <p class="info">After the message has been read, do you wish to archive the message in another folder? This can be any folder within your mailbox, including custom folders or Trash/Deleted Items. Sub folders should be concatenated with a dot or period symbol, ie: Inbox.Sent.<br /><br />Use the "Show Folders" option to display mailbox folders.<br /><br />If left blank, message is deleted without archiving (if you find this isn`t the case, you must add a folder to move the messages to. This will prevent duplicate tickets).<br /><br /><b>Note the move option works ONLY with imap accounts</b></p>
+    
+    <p class="head">Maximum Messages to Fetch</p>
+    
+    <p class="info">How many messages do you want to fetch each time the mailbox is accessed? Max 999.</p>
+    
+    <p class="head">Enable SSL</p>
+    
+    <p class="info">Are you connecting to the mailbox using ssl?</p>
+    
+    <p class="head">Assign to Department</p>
+    
+    <p class="info">Specify which department is to be assigned to tickets opened via e-mail.</p>
+    
+    <p class="head">Default Priority</p>
+    
+    <p class="info">Specify the default priority level for tickets started via e-mail.</p>
+    
+    <p class="head">Imap Reply-to E-Mail Address</p>
+    
+    <p class="info">This is your reply to e-mail address for imap messages. If set to same as mailbox thats being read, this enables visitors to reply directly in their email software back to the imap account. If this happens, the system will attempt to assign the reply to the same ticket.<br /><br />Set to another e-mail not to have replies sent to imap address.</p>
+    
+    <p class="head">Check Mail/Edit/Delete</p>
+    
+    <p class="info">Use the options provided to edit or delete imap accounts.<br /><br />Use the 'Check Mail' option to test your mailbox connection and run the imap functions directly instead of waiting for the next cron.</p>
+    
+    <p class="head">Enable Debug Mode</p>
+    
+    <p class="info">If you are having issues with your mail account and all you see is a whitescreen when using the 'Check Mail' option, you can enable the debug mode to hopefully display the reason for the the issue:<br /><br />
+    To enable this, open the 'control/user-defined/defined.inc.php' file in a text editor and set 'ENABLE_IMAP_DEBUG' to 1. Remember to reset it when all is working. If this doesn`t help, check your server mail logs.
+    </p>
+    
+    <p class="head">Help Tips</p>
+    
+    <p class="info">The same or additional information may be provided by hovering your cursor over the <img class="help_img" src="images/help.png" alt="" title="" /> image next to each heading in the admin area if applicable.</p>
+    
+  </div>
+  
+</div>  
+
+</div>
+
+<div id="footer">
+  <p class="copyright">
+   <b>Powered by</b>: <a href="http://www.maiansupport.com" title="Maian Support" onclick="window.open(this);return false">Maian Support</a>
+   &copy; 2005-<script type="text/javascript">var d = new Date(); document.write(d.getFullYear());</script> <a href="http://www.maianscriptworld.co.uk" onclick="window.open(this);return false" title="Maian Script World">Maian Script World</a>. All Rights Reserved  </p>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+jQuery(document).ready(function() {
+ jQuery().UItoTop();
+});
+//]]>
+</script>
+</body>
+</html>

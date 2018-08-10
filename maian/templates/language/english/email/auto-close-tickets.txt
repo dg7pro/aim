@@ -1,0 +1,17 @@
+Hello {NAME},
+
+Our system auto closes tickets after a set time if no further replies have been received as we assume the issue is resolved.
+
+The following ticket has now been closed.
+
+Ticket ID: #{TICKET}
+Subject: {SUBJECT}
+
+If you wish to re-open this ticket with a new reply, please do so via your account area:
+{WEBSITE_URL}/?t={ID}
+
+Kind regards,
+
+------------------------------------
+{WEBSITE_NAME}
+{WEBSITE_URL}

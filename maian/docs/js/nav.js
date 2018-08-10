@@ -1,0 +1,15 @@
+document.write('<div id="dropmenudiv" style="visibility:hidden;width:185px;background-color:#dbdbbe" onmouseover="clearhidemenu()" onmouseout="dynamichide(event)"></div>');
+document.write('<table width="100%" cellspacing="0" cellpadding="0">');
+document.write('<tr>');
+document.write('  <td class="first"><a href="index.html">Home</a></td>');
+document.write('  <td onmouseover="dropdownmenu(this, event, install, \'185px\')" onmouseout="delayhidemenu()"><a href="#">Setup</a></td>');
+document.write('  <td onmouseover="dropdownmenu(this, event, portal, \'185px\')" onmouseout="delayhidemenu()"><a href="#">Portal</a></td>');
+document.write('  <td onmouseover="dropdownmenu(this, event, settings, \'185px\')" onmouseout="delayhidemenu()"><a href="#">Settings</a></td>');
+document.write('  <td><a href="dept.html">Departments</a></td>');
+document.write('  <td><a href="users.html">Users</a></td>');
+document.write('  <td onmouseover="dropdownmenu(this, event, tickets, \'185px\')" onmouseout="delayhidemenu()"><a href="#">Tickets</a></td>');
+document.write('  <td onmouseover="dropdownmenu(this, event, faq, \'185px\')" onmouseout="delayhidemenu()"><a href="#">F.A.Q System</a></td>');
+document.write('  <td onmouseover="dropdownmenu(this, event, tools, \'185px\')" onmouseout="delayhidemenu()"><a href="#">Tools</a></td>');
+document.write('  <td style="border-right:0" onmouseover="dropdownmenu(this, event, other, \'185px\')" onmouseout="delayhidemenu()" class="last"><a href="#">Other</a></td>');
+document.write('</tr>');
+document.write('</table>');

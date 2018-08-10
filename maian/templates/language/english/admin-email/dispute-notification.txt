@@ -1,0 +1,20 @@
+Hello {NAME},
+
+This email confirms your ticket entitled "{TITLE}" has now been turned into a dispute.
+
+You are in dispute with the following people:
+
+{PEOPLE}
+
+Please allow each person in the dispute to have his/her say and be patient while we resolve this issue.
+
+If you are receiving this email again, it could be that more people have been added to the dispute.
+
+To view this ticket or add a new response, log in to your ticket portal at:
+{WEBSITE_URL}/?d={ID}
+
+Kind regards,
+
+------------------------------------
+{WEBSITE_NAME}
+{WEBSITE_URL}

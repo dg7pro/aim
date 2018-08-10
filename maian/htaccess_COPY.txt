@@ -1,0 +1,4 @@
+#To prevent directory browsing, rename this file to .htaccess
+#If you see a 500 error, your server doesn`t support .htaccess
+
+IndexIgnore */*

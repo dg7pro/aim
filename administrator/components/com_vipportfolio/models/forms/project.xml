@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field 
+			name="id" 
+			type="text" 
+			default="0" 
+			label="JGLOBAL_FIELD_ID_LABEL" 
+			readonly="true" 
+			class="readonly"
+			description="JGLOBAL_FIELD_ID_DESC"
+			filter="int"
+			/>
+
+        <field name="alias" type="text" class="inputbox" 
+            size="60" 
+            label="JFIELD_ALIAS_LABEL"
+            description="JFIELD_ALIAS_DESC" 
+            filter="trim"
+        />
+        
+		<field 
+		    name="title" 
+		    type="text" 
+		    class="inputbox"
+			size="40" 
+			label="JGLOBAL_TITLE"
+			description="COM_VIPPORTFOLIO_FIELD_TITLE_DESC" 
+			required="true" 
+			filter="trim" />
+
+		<field
+	        name="catid"
+	        type="vpcategories"
+	        label="JCATEGORY"
+	        filter="int"
+	        />
+
+		<field
+			name="published"
+			type="list"
+			label="JSTATUS"
+			description="JFIELD_PUBLISHED_DESC"
+			class="inputbox"
+			size="1"
+			default="1" >
+			<option
+				value="1">JPUBLISHED</option>
+			<option
+				value="0">JUNPUBLISHED</option>
+		</field>
+		
+		<field name="thumb" type="file" class="inputbox"
+            label="COM_VIPPORTFOLIO_FIELD_THUMB"
+            description="COM_VIPPORTFOLIO_FIELD_THUMB_DESC"
+            size="60"
+        />
+        
+		<field
+            name="image"
+            type="file"
+            label="COM_VIPPORTFOLIO_FIELD_IMAGE"
+            description="COM_VIPPORTFOLIO_FIELD_IMAGE_DESC"
+            class="inputbox"
+            size="60"
+            />
+            
+        <field
+            name="url"
+            type="url"
+            label="COM_VIPPORTFOLIO_URL"
+            description="COM_VIPPORTFOLIO_FIELD_URL_DESC"
+            class="inputbox"
+            size="60"
+            filter="trim"
+            validate="url"
+            />
+		
+		<field name="description" type="editor" buttons="false" show="toggle"
+            class="inputbox"
+            filter="safehtml"
+            width="500"
+            label="JGLOBAL_DESCRIPTION" 
+            description="COM_VIPPORTFOLIO_FIELD_DESCRIPTION_DESC" 
+            />
+
+	</fieldset>
+	
+	<fields name="resize">
+    
+       <field name="create_thumb"  type="checkbox" 
+            label="COM_VIPPORTFOLIO_THUMB_CREATE_THUMB"
+            description="COM_VIPPORTFOLIO_THUMB_CREATE_THUMB_DESC" 
+            filter="int" 
+            value="1"
+        />
+        
+       <field name="thumb_width"  type="text" class="inputbox"
+            label="COM_VIPPORTFOLIO_THUMB_WIDTH"
+            description="COM_VIPPORTFOLIO_THUMB_RESIZE_WIDTH_DESC" 
+            filter="int" 
+            default="200"
+        />
+        
+        <field name="thumb_height"  type="text" class="inputbox"
+            label="COM_VIPPORTFOLIO_THUMB_HEIGHT"
+            description="COM_VIPPORTFOLIO_THUMB_RESIZE_HEIGHT_DESC" 
+            filter="int" 
+            default="300"
+        />
+        
+        <field name="thumb_scale" type="list" class="inputbox"
+            label="COM_VIPPORTFOLIO_THUMB_SCALE_OPTION"
+            description="COM_VIPPORTFOLIO_SCALE_DESC"
+            default="2" >
+            <option value="1">COM_VIPPORTFOLIO_FILL</option>
+            <option value="2">COM_VIPPORTFOLIO_INSIDE</option>
+            <option value="3">COM_VIPPORTFOLIO_OUTSIDE</option>
+        </field>
+        
+        <field name="resize_image"  type="checkbox" 
+            label="COM_VIPPORTFOLIO_IMAGE_RESIZE"
+            description="COM_VIPPORTFOLIO_IMAGE_RESIZE_DESC" 
+            filter="int" 
+            value="1"
+        />
+        
+        <field name="image_width"  type="text" class="inputbox"
+            label="COM_VIPPORTFOLIO_IMAGE_WIDTH"
+            description="COM_VIPPORTFOLIO_IMAGE_RESIZE_WIDTH_DESC" 
+            filter="int" 
+            default="500"
+        />
+        
+        <field name="image_height"  type="text" class="inputbox"
+            label="COM_VIPPORTFOLIO_IMAGE_HEIGHT"
+            description="COM_VIPPORTFOLIO_IMAGE_RESIZE_HEIGHT_DESC" 
+            filter="int" 
+            default="600"
+        />
+        
+        <field name="image_scale" type="list" class="inputbox"
+            label="COM_VIPPORTFOLIO_IMAGE_SCALE_OPTION"
+            description="COM_VIPPORTFOLIO_SCALE_DESC"
+            default="2" >
+            <option value="1">COM_VIPPORTFOLIO_FILL</option>
+            <option value="2">COM_VIPPORTFOLIO_INSIDE</option>
+            <option value="3">COM_VIPPORTFOLIO_OUTSIDE</option>
+        </field>
+        
+    </fields>
+    
+</form>

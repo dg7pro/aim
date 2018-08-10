@@ -1,0 +1,474 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=iso-8859-1" />
+<title>Frequently Asked Questions: Maian Support - Documentation</title>
+<link href="stylesheet.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/menu.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/scrolltotop.js"></script>
+<link href="menu.css" rel="stylesheet" type="text/css" />
+<link rel="SHORTCUT ICON" href="favicon.ico" />
+</head>
+
+<body>
+
+<div id="topBar">
+
+  <div class="inner">
+  
+    <div class="left">
+      <p class="doclinks">Documentation&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
+      <a href="https://www.facebook.com/maianscripts" onclick="window.open(this);return false"><img src="images/facebook.png" alt="Maian Script World on Facebook" title="Maian Script World on Facebook" /></a>
+      <a href="https://twitter.com/#!/maianscripts" onclick="window.open(this);return false"><img src="images/twitter.png" alt="Maian Script World on Twitter" title="Maian Script World on Twitter" /></a>
+      <a href="http://www.youtube.com/user/maianscripts" onclick="window.open(this);return false"><img src="images/youtube.png" alt="Maian Script World on YouTube" title="Maian Script World on YouTube" /></a>
+      <a href="http://www.maiansupport.com/rss.html" onclick="window.open(this);return false"><img src="images/rssfeeds.png" alt="Maian Support Updates" title="Maian Support Updates" /></a>
+      </p>
+    </div>
+  
+    <div class="right">
+      <p>
+      <a href="http://www.maiansupport.com/purchase.html" title="Purchase Full Version" onclick="window.open(this);return false">Purchase Full Version</a> &#8226;
+      <a href="upgrades.html" title="Upgrades">Upgrades</a> &#8226;      
+      <a href="bugs.html" title="Report Bug">Report Bug</a> &#8226;      
+      <a href="other_1.html" title="Support">Support</a> &#8226;
+      <a href="http://www.maianscriptworld.co.uk" title="Other Free Scripts">Other Free Scripts</a>
+      </p>
+    </div>
+  
+  </div>
+  
+  <br class="clear" />
+
+</div>
+
+<div id="header">
+  
+  <div class="left">
+    <p><a href="index.html"><img src="images/logo.png" alt="Maian Support - Documentation" title="Maian Support - Documentation" /></a></p>
+  </div>
+  
+  <div class="right">
+   <p>
+     <span style="color:#354A50;margin:0 0 7px 0">COMMERCIAL VERSION INCLUDES:</span>
+     <span>- FREE upgrades for life</span>
+     <span>- One time payment, NO subscriptions</span>
+     <span>- ALL features unlocked and unlimited</span>
+   </p>
+  </div>
+  
+  <br class="clear" />
+  
+</div>
+
+<div id="wrapper">
+
+<div id="menu">
+ <script type="text/javascript" src="js/nav.js"></script>
+</div>
+
+<div class="homeWrapper">
+
+  <div id="innerArea">
+  
+    <p class="head">How Do I Find My Product Key?</p>
+    
+    <p class="info">If you are using the none commercial version, in your admin area, click 'Purchase Full Version' to view your product key.<br /><br />
+    <img src="images/helpdesk/67.jpg" class="sysimg" alt="" title="" /><br /><br />
+    <img src="images/helpdesk/66.jpg" class="sysimg" alt="" title="" /><br /><br />
+    If you don`t see this link, access the following link in your admin area:<br /><br />
+    <b>admin/index.php?p=purchase</b>
+    </p>
+    
+    <p class="head">Enable PHP Error Reporting</p>
+    
+    <p class="info">Maian Support is coded to not show PHP errors by default, but it can be a useful debugging tool if you are modifying any of the PHP templates and something isn`t working properly. Error reporting is set in the following files:<br /><br />
+    <b>control/error-reporting.php<br />
+    admin/control/error-reporting.php</b><br /><br />
+    E_ALL is generally recommended, but refer to the notes in your PHP.ini file for other levels. Error reporting should be off on production servers.
+    </p>
+    
+    <p class="head">I`ve forgot my admin login details. Can I reset them?</p>
+    
+    <p class="info">
+    Yes. If you have forgotten your admin user details, you can use the pass reset option to update all users. More information <a href="reset.html">here</a>.
+    </p>
+  
+    <p class="head">How do I install ionCube?</p>
+    
+    <p class="info">
+    For Maian Support to run your server must be compiled with support for the ionCube loaders. Your web hosting company will be able to help. If you run
+    your own server, see the ionCube section for help.
+    </p>
+    
+    <p class="head">All I see is a white page. Why?</p>
+    
+    <p class="info">
+    The loading of the software has failed and the error reporting on the server is set to not display errors. Check your error logs. If nothing is there you can try enabling error logging
+    as specified above.
+    </p>
+    
+    <p class="head">Can you install the ionCube loaders for me?</p>
+    
+    <p class="info">
+    As this requires root server access in some cases (ie, window servers), it may not be possible. I would recommend contacting your host first.
+    </p>
+    
+    <p class="head">Will the system work with PHP6?</p>
+    
+    <p class="info">
+    No, the system is not tested and encoded for PHP6.
+    </p>
+    
+    <p class="head">Messages are being truncated with certain special characters. Is there a fix?</p>
+    
+    <p class="info">
+    MySQL cannot properly handle four-byte characters with the default utf-8 charset up until version 5.5.3. The only workaround is to convert
+    these characters to a question mark. Not fancy, but it should prevent the posts from being truncated. To enable this edit the 'control/user-defined/defined2.inc.php' file.<br /><br />
+    Set the 'CONVERT_BAD_MULTIBYTE_CHARS' value to 1.
+    </p>
+    
+    <p class="head">How are tickets and disputes different?</p>
+    
+    <p class="info">
+    A ticket is a standard communication between the person who opened the ticket and admin. A dispute can be seen by multiple users and admin. So, for example, lets say you run
+    a games site and 2 users are in dispute. User 1 can open a ticket and user 2 can then be added to the same ticket via the dispute system. Both users can then see each others replies.
+    </p>
+    
+    <p class="head">How do I create a dispute?</p>
+    
+    <p class="info">
+    To create a dispute from a ticket, click to view the ticket and then click 'Create Dispute' from the top bar, this turns the ticket into a dispute. You then
+    have to add other users to the dispute. See the 'Tickets' menu and view the dispute pages.
+    </p>
+    
+    <p class="head">Can I upgrade from a previous version older than v2.0?</p>
+    
+    <p class="info">
+    Sorry, this isn`t possible.
+    </p>
+    
+    <p class="head">Can I change the text in the software and add my own wording?</p>
+    
+    <p class="info">
+    Yes, see the <a href="install_4.html">language</a> section.
+    </p>
+    
+    <p class="head">I would like to add my own logos. Is this possible?</p>
+    
+    <p class="info">
+    Yes of course, just overwrite the following images with your own:<br /><br />
+    <b>templates/images/logo.png<br />
+    admin/templates/images/logo.png</b>
+    </p>
+    
+    <p class="head">404/400 etc Error messages are pretty bland. Can I create my own?</p>
+    
+    <p class="info">Yes, just edit the files in the following folders:<br /><br />
+    <b>control/system/response-headers/*<br />
+    admin/control/system/response-headers/*</b></p>
+    
+    <p class="head">Can I edit the PHP files?</p>
+    
+    <p class="info">
+    All files may be edited, except the files in the following directories:<br /><br />
+    <b>control/system/core/*<br />
+    admin/control/system/core/*</b><br /><br />
+    You must <b>NOT</b> edit any of these files or the system will fail to load.
+    </p>
+    
+    <p class="head">Can I remove the website name from the e-mail subjects?</p>
+    
+    <p class="info">Yes, search the following folder:<br /><br />
+    <b>templates/language/english/*</b><br /><br />
+    You are looking for the following string:<br /><br />
+    <b>[{website}]</b><br /><br />
+    Remove all instances of this string EXACTLY as you see it, so with brackets and braces.
+    </p>
+    
+    <p class="head">Which files are encoded?</p>
+    
+    <p class="info">The main 'index.php' files and all files in the 'core' folders. Most of the files are not encoded and you can modify them as you wish. Note that
+    removing some licence checks may prevent the system from loading.
+    </p>
+    
+    <p class="head">Can I load custom code from the main index.php files?</p>
+    
+    <p class="info">Yes, see the <a href="install_3.html">Template Integration</a> section.</p>
+    
+    <p class="head">Can I change the * symbol that appears for required form fields?</p>
+    
+    <p class="info">Yes, edit the 'control/user-defined/defined2.inc.php' file and the 'CUSTOM_REQUIRED_MARKER' option.</p>
+    
+    <p class="head">Can I change the default ordering for the tickets/disputes view?</p>
+    
+    <p class="info">Yes, edit the 'control/user-defined/defined2.inc.php' file and the 'ALL_TICKETS_ORDER/ALL_DISPUTES_ORDER' options.</p>
+    
+    <p class="head">Can I use multiple languages at the same time?</p>
+    
+    <p class="info">Yes, see the note on the <a href="install_4.html">languages</a> page.</p>
+    
+    <p class="head">Can I integrate the layout into my own site design?</p>
+    
+    <p class="info">
+    Yes, you`ll need to edit all the template files in the 'templates' folder. Click <a href="install_3.html">here</a> for more help.
+    </p>
+    
+    <p class="head">Ticket numbers are prefixed with 5 zeros as default. Can I change this?</p>
+    
+    <p class="info">
+    Yes, edit the 'control/user-defined/defined.inc.php' file. Increase or decrease the value of 'MIN_DIGITS_TICKETS'.
+    </p>
+    
+    <p class="head">Can I disable the e-mail notification when someone changes their password?</p>
+    
+    <p class="info">
+    Yes, edit the 'control/user-defined/defined.inc.php' file. Set the 'CHANGE_PASS_NOTIFICATION' value to 0.
+    </p>
+    
+    <p class="head">Invalid characters are causing problems in file attachment uploads. Can I fix this?</p>
+    
+    <p class="info">
+    If this is a problem, it is recommended you rename attachments, which is set in your admin settings
+    </p>
+    
+    <p class="head">Can I have the admin ticket comments appear in reply text files?</p>
+    
+    <p class="info">
+    Yes, use {COMMENTS} in the following files:<br /><br />
+    <b>templates/language/english/admin-email/ticket-reply.txt<br />
+    templates/language/english/admin-email/ticket-reply-and-merged.txt<br />
+    templates/language/english/admin-email/dispute-reply.txt<br />
+    templates/language/english/admin-email/dispute-reply-and-merged.txt
+    </b>
+    </p>
+    
+    <p class="head">Can I add custom mail headers?</p>
+    
+    <p class="info">
+    Yes, you can add custom mail headers in the following file.<br /><br />
+    <b>control/custom-mail-headers.php</b>
+    </p>
+    
+    <p class="head">Can I change the voting percentage decimal places?</p>
+    
+    <p class="info">
+    Yes, edit the 'control/user-defined/defined.inc.php' file. Increase or decrease the value of 'VOTING_DECIMAL_PLACES'.
+    </p>
+    
+    <p class="head">Is it possible to increase memory limit and timeout limits for imap?</p>
+    
+    <p class="info">
+    Yes, edit the 'control/user-defined/defined.inc.php' file. Increase or decrease the values of 'IMAP_MEMORY_OVERRIDE' &amp; 'IMAP_MEMORY_OVERRIDE'.
+    </p>
+    
+    <p class="head">Can I strip HTML from tickets that are received via imap?</p>
+    
+    <p class="info">
+    Yes, edit the 'control/user-defined/defined.inc.php' file. Set the 'STRIP_HTML_IMAP' value to 1.
+    </p>
+    
+    <p class="head">Can I set the timezone in the software to my own?</p>
+    
+    <p class="info">
+    Yes, this should be done on installation. Edit the 'control/connect.inc.php' file. Change the value for 'DEFAULT_TIMEZONE';
+    </p>
+    
+    <p class="head">Can I remove the version check link in the admin area?</p>
+    
+    <p class="info">
+    Yes, edit the 'admin/control/user-defined/defined2.inc.php' file. Set the 'DISPLAY_SOFTWARE_VERSION_CHECK' value to 0.
+    </p>
+    
+    <p class="head">My server requires output from the cron job. Can this be enabled?</p>
+    
+    <p class="info">
+    Yes, edit the 'control/user-defined/defined.inc.php' file. Set the 'DISPLAY_IMAP_CRON_OUTPUT' value to 1.
+    </p>
+    
+    <p class="head">Can I change the default Url parameter for the cron for security?</p>
+    
+    <p class="info">
+    Yes. Default is 'pipe'. ie: pipe=XX. To change pipe, edit the 'control/user-defined/defined.inc.php' file and change the 'IMAP_URL_PARAMETER' value.
+    </p>
+    
+    <p class="head">Can I disable the help tips in the admin area?</p>
+    
+    <p class="info">
+    Yes, edit the 'admin/control/user-defined/defined.inc.php' file. Set the 'HELP_TIPS' value to 0.
+    </p>
+    
+    <p class="head">Can I change the date picker to be RTL (right to left)?</p>
+    
+    <p class="info">
+    Yes, edit the $msg_cal3 option in the 'templates/language/*/lang2.php' file and set it to 'true'.
+    </p>
+    
+    <p class="head">Can I add additional options to the jQuery date picker?</p>
+    
+    <p class="info">
+    Yes, edit the 'admin/templates/date-picker.php' file. 
+    </p>
+    
+    <p class="head">Can I disable the homepage sideboxes in the admin area?</p>
+    
+    <p class="info">
+    Yes, edit the options in the 'admin/control/user-defined/defined2.inc.php' file.
+    </p>
+    
+    <p class="head">Can I change the HTML tag parameters in admin template files?</p>
+    
+    <p class="info">
+    Yes, edit the 'admin/control/user-defined/defined.inc.php' file. Edit the 'HTML_HEADER' value.
+    </p>
+    
+    <p class="head">Passwords generated are 6 chars. Can I increase or decrease this?</p>
+    
+    <p class="info">
+    Yes, edit the 'control/user-defined/defined.inc.php' file. Change the value for 'PASS_CHARS'.
+    </p>
+    
+    <p class="head">Can I disable MySQL errors for security?</p>
+    
+    <p class="info">
+    Yes, edit the 'control/connect.inc.php' file. Set the 'ENABLE_MYSQL_ERRORS' value to 0. You should also add a default message by editing 'MYSQL_DEFAULT_ERROR'.
+    </p>
+    
+    <p class="head">Can I adjust pop up div width and heights in the admin area?</p>
+    
+    <p class="info">
+    Yes, all pop up sizes are set in the 'admin/control/user-defined/defined.inc.php' file.
+    </p>
+    
+    <p class="head">Can admin upload more attachments than visitors?</p>
+    
+    <p class="info">
+    Yes. An override is set in the 'admin/control/user-defined/defined.inc.php' file. Change the value for 'ADMIN_ATTACH_BOXES_OVERRIDE'.
+    </p>
+    
+    <p class="head">Can I disable the notification popups if I enable/disable dispute post privileges?</p>
+    
+    <p class="info">
+    Yes, edit the 'admin/control/user-defined/defined2.inc.php' file. Set the 'DISPUTE_POST_PRIVILEGE_CONFIRMATION' value to 0.
+    </p>
+    
+    <p class="head">Can I stop the system re-directing visitors to tickets on login?</p>
+    
+    <p class="info">
+    Yes, edit the 'control/user-defined/defined2.inc.php' file. Change the value of 'AUTO_VIS_TICKET_REDIRECT' to 0.
+    </p>
+    
+    <p class="head">Can I stop the system re-directing users to ticket on login?</p>
+    
+    <p class="info">
+    Yes, edit the 'admin/control/user-defined/defined.inc.php' file. Change the value of 'REDIRECT_TO_TICKET_ON_LOGIN' to 0.
+    </p>
+    
+    <p class="head">Can I have HTML formatted e-mails?</p>
+    
+    <p class="info">
+    Yes, edit the 'control/user-defined/defined.inc.php' file. Change the value of 'HTML_EMAILS' to 1. Remember that you`ll need to reformat the e-mail templates and add HTML
+    line breaks or else the code will be on one line.
+    </p>
+    
+    <p class="head">Can I remove the Maian Support links in e-mails?</p>
+    
+    <p class="info">
+    Sorry, not in the free version. The commercial upgrade removes this option.
+    </p>
+    
+    <p class="head">How much do I have to pay for upgrades?</p>
+    
+    <p class="info">
+    Nothing at all. All future upgrades are FREE of charge.
+    </p>
+    
+    <p class="head">Ok, I`ve purchased a licence. What do I do now?</p>
+    
+    <p class="info">
+    Firstly, go to the <a href="https://www.maiangateway.com">Maian Script World Licence Centre</a> and log in with the username/password sent to you in the e-mail you received after purchase. If you
+    didn`t receive this e-mail, please contact me via the Maian Support website.<br /><br />
+    Once you have logged in, use the options provided to generate your licence. Your new licence file will be included in a zip file along with a readme file. You should
+    replace the default .lic file with your new one. This will unlock the free feature restrictions.
+    </p>
+    
+    <p class="head">How do I use the imap functions and make e-mail piping work?</p>
+    
+    <p class="info">
+    Please see the <a href="settings_2.html">imap</a> section.
+    </p>
+    
+    <p class="head">Can I ban visitors from accessing the system?</p>
+    
+    <p class="info">
+    There are no e-mail blocking options in Maian Support, most visitors blocked will simply use another e-mail address, so its fairly pointless. You can try blocking their
+    IP address via .htaccess (if your server supports it), or via some other method.
+    </p>
+    
+    <p class="head">Can I block a visitor from accessing their ticket portal?</p>
+    
+    <p class="info">
+    Yes, via the portal options in your admin area. This was added in 2.1
+    </p>
+    
+    <p class="head">I have some great suggestions to make the system better. Can I let you know?</p>
+    
+    <p class="info">
+    Yes please. Use the contact option on the Maian Support website.
+    </p>
+    
+    <p class="head">Can you recommend a good web host?</p>
+    
+    <p class="info">
+    There are lots of good web hosting companies around. Try a search on Google. Read what other people say.
+    </p>
+    
+    <p class="head">Can I use some fancy coding to hide your footer links?</p>
+    
+    <p class="info">
+    This is against the scripts licence. Dishonesty is a bad trait.
+    </p>
+    
+    <p class="head">Can I disable the admin entry log?</p>
+    
+    <p class="info">
+    Yes, edit the 'admin/control/user-defined/defined.inc.php' file. Change the value of 'ENABLE_ENTRY_LOG' to 0.
+    </p>
+    
+    <p class="head">Can I restrict certain users from being logged in the entry log?</p>
+    
+    <p class="info">
+    Yes, edit the 'admin/control/user-defined/defined.inc.php' file. Change the value of 'ENTRY_LOG_RESTRICTION'. See the notes for more information.
+    </p>
+    
+    <p class="head">Can I disable the message option in admin for users to contact other users?</p>
+    
+    <p class="info">
+    Yes, edit the 'admin/control/user-defined/defined.inc.php' file. Change the value of 'ENABLE_MESSENGER' to 0.
+    </p>
+    
+    <p class="head">Help Tips</p>
+    
+    <p class="info">The same or additional information may be provided by hovering your cursor over the <img class="help_img" src="images/help.png" alt="" title="" /> image next to each heading in the admin area if applicable.</p>
+    
+  </div>
+  
+</div>  
+
+</div>
+
+<div id="footer">
+  <p class="copyright">
+   <b>Powered by</b>: <a href="http://www.maiansupport.com" title="Maian Support" onclick="window.open(this);return false">Maian Support</a>
+   &copy; 2005-<script type="text/javascript">var d = new Date(); document.write(d.getFullYear());</script> <a href="http://www.maianscriptworld.co.uk" onclick="window.open(this);return false" title="Maian Script World">Maian Script World</a>. All Rights Reserved  </p>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+jQuery(document).ready(function() {
+ jQuery().UItoTop();
+});
+//]]>
+</script>
+</body>
+</html>

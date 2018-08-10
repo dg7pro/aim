@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=iso-8859-1" />
+<title>XML-RPC API: Maian Support - Documentation</title>
+<link href="stylesheet.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/menu.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/scrolltotop.js"></script>
+<link href="menu.css" rel="stylesheet" type="text/css" />
+<link rel="SHORTCUT ICON" href="favicon.ico" />
+</head>
+
+<body>
+
+<div id="topBar">
+
+  <div class="inner">
+  
+    <div class="left">
+      <p class="doclinks">Documentation&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
+      <a href="https://www.facebook.com/maianscripts" onclick="window.open(this);return false"><img src="images/facebook.png" alt="Maian Script World on Facebook" title="Maian Script World on Facebook" /></a>
+      <a href="https://twitter.com/#!/maianscripts" onclick="window.open(this);return false"><img src="images/twitter.png" alt="Maian Script World on Twitter" title="Maian Script World on Twitter" /></a>
+      <a href="http://www.youtube.com/user/maianscripts" onclick="window.open(this);return false"><img src="images/youtube.png" alt="Maian Script World on YouTube" title="Maian Script World on YouTube" /></a>
+      <a href="http://www.maiansupport.com/rss.html" onclick="window.open(this);return false"><img src="images/rssfeeds.png" alt="Maian Support Updates" title="Maian Support Updates" /></a>
+      </p>
+    </div>
+  
+    <div class="right">
+      <p>
+      <a href="http://www.maiansupport.com/purchase.html" title="Purchase Full Version" onclick="window.open(this);return false">Purchase Full Version</a> &#8226;
+      <a href="upgrades.html" title="Upgrades">Upgrades</a> &#8226;      
+      <a href="bugs.html" title="Report Bug">Report Bug</a> &#8226;      
+      <a href="other_1.html" title="Support">Support</a> &#8226;
+      <a href="http://www.maianscriptworld.co.uk" title="Other Free Scripts">Other Free Scripts</a>
+      </p>
+    </div>
+  
+  </div>
+  
+  <br class="clear" />
+
+</div>
+
+<div id="header">
+  
+  <div class="left">
+    <p><a href="index.html"><img src="images/logo.png" alt="Maian Support - Documentation" title="Maian Support - Documentation" /></a></p>
+  </div>
+  
+  <div class="right">
+   <p>
+     <span style="color:#354A50;margin:0 0 7px 0">COMMERCIAL VERSION INCLUDES:</span>
+     <span>- FREE upgrades for life</span>
+     <span>- One time payment, NO subscriptions</span>
+     <span>- ALL features unlocked and unlimited</span>
+   </p>
+  </div>
+  
+  <br class="clear" />
+  
+</div>
+
+<div id="wrapper">
+
+<div id="menu">
+ <script type="text/javascript" src="js/nav.js"></script>
+</div>
+
+<div class="homeWrapper">
+
+  <div id="innerArea">
+  
+    <p class="head">XML-RPC API</p>
+    
+    <p class="info">
+    This ticket software supports data transmission via <a href="http://en.wikipedia.org/wiki/XML-RPC" onclick="window.open(this);return false">XML-RPC</a>. This is a useful tool and enables any application/device that supports sending xml as a HTTP data post to transmit and automatically open tickets. For this to
+    work you`ll need to format the XML as shown below.
+    </p>
+    
+    <p class="head">Simple XML</p>
+    
+    <p class="info">
+    Maian Support parses xml using the <a href="http://php.net/manual/en/book.simplexml.php" onclick="window.open(this);return false">Simple XML</a> functions. This is a requirement of your server for this function to work.
+    </p>
+    
+    <p class="head">XML-RPC API Key</p>
+    
+    <p class="info">
+    To enable this feature you first need to create a API key and use this key in all data posts. The software checks this key to make sure the posts are coming from valid applications. To create
+    a new key, login to your admin area and click 'Settings'. Scroll down to 'XML Data Post API Key'. Use the option provided to generate a new key or create your own.
+    </p>
+    
+    <p class="head">Url Encode Data</p>
+    
+    <p class="info">
+    All post data sent should be url encoded for better performance. This isn`t required, but it is recommended.
+    </p>
+    
+    <p class="head">API Url</p>
+    
+    <p class="info">
+    All data is posted to your main index.php file, with the following parameter: 'index.php?p=xml'<br /><br />
+    <b>http://www.example.com/helpdesk/index.php?p=xml</b>
+    </p>
+    
+    <p class="head">XML Wrapper Structure</p>
+    
+    <p class="info">
+    Your xml wrapper structure should look like the following:<br /><br />
+    <span class="xmlHighlighter">
+    &lt;?xml version="1.0" encoding="UTF-8"?&gt;<br />
+    &lt;datapost&gt;<br />
+    &nbsp;&nbsp;&lt;api&gt;YOUR KEY&lt;/api&gt;<br />
+    &nbsp;&nbsp;&lt;tickets&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#5d781d">(ticket tags as shown below)</span><br />
+    &nbsp;&nbsp;&lt;/tickets&gt;<br />
+    &lt;/datapost&gt;
+    </span>
+    </p>
+    
+    <p class="head">Ticket Data</p>
+    
+    <p class="info">
+    Multiple tickets are possible with each transmission. Each ticket should be wrapper in &lt;ticket&gt;&lt;/ticket&gt; tags. Inside each data is the data related to the ticket. Custom field
+    data is also supported and is optional. Structure as follows:<br /><br />
+    
+    <span class="xmlHighlighter">
+    &lt;ticket&gt;<br />
+    &nbsp;&nbsp;&lt;name&gt;Persons Name&lt;/name&gt;<br />
+    &nbsp;&nbsp;&lt;email&gt;Persons Email&lt;/email&gt;<br />
+    &nbsp;&nbsp;&lt;dept&gt;Dept ID number&lt;/dept&gt;<br />
+    &nbsp;&nbsp;&lt;subject&gt;Subject of ticket&lt;/subject&gt;<br />
+    &nbsp;&nbsp;&lt;comments&gt;Comments&lt;/comments&gt;<br />
+    &nbsp;&nbsp;&lt;priority&gt;xml rpc ID as shown on priority level page in settings&lt;/priority&gt;<br />
+    &nbsp;&nbsp;&lt;customfields&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#5d781d">(custom field tags as shown below)</span><br />
+    &nbsp;&nbsp;&lt;/customfields&gt;<br />
+    &nbsp;&nbsp;&lt;attachments&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#5d781d">(attachments tags as shown below)</span><br />
+    &nbsp;&nbsp;&lt;/attachments&gt;<br />
+    &lt;/ticket&gt;<br /><br />
+    </span>
+    
+    Priority level must be XML RPC ID as shown on priority levels page in your settings. This may be a text value OR a numeric ID. See screenshot:<br /><br />
+    <img src="images/helpdesk/65.jpg" class="sysimg" alt="" title="" />
+    
+    </p>
+    
+    <p class="head">Custom Field Data</p>
+    
+    <p class="info">
+    Custom field data is also supported and is optional. Structure as follows:<br /><br />
+    
+    <span class="xmlHighlighter">
+    &lt;f1&gt;Custom field ID 1 data&lt;/f1&gt;<br />
+    &lt;f2&gt;Custom field ID 2 data&lt;/f2&gt;<br />
+    &lt;f3&gt;Custom field ID 3 data&lt;/f3&gt;<br />
+    &lt;f4&gt;Custom field ID 4 data&lt;/f4&gt;<br /><br />
+    </span>
+    
+    Each field tag contains the ID number of the field as shown in your admin area prefixed with an 'f'. 'f1' for example would be custom field ID 1. If the ID doesn`t exist in the system, the field tag will be ignored.<br /><br />
+    
+    If the custom field value can be one of a number of specific options, the options you present to visitors in your application should mirror these.
+    
+    </p>
+    
+    <p class="head">Attachments</p>
+    
+    <p class="info">
+    Multiple attachments are possible with each transmission. Attachment data must be base64 encoded:<br /><br />
+    
+    <span class="xmlHighlighter">
+    &lt;file&gt;<br />
+    &nbsp;&nbsp;&lt;ext&gt;File Extension&lt;/ext&gt;<br />
+    &nbsp;&nbsp;&lt;data&gt;Base64 Encoded File Data&lt;/data&gt;<br />
+    &lt;/file&gt;<br /><br />
+    </span>
+    
+    Each attachment should be wrapped in &lt;file&gt;&lt;/file&gt; tags and contain 2 additional tags, one for the file extension and one containing the base64 encoded data. File extension
+    examples would be:<br /><br />
+    <span class="xmlHighlighter">
+    &lt;ext&gt;pdf&lt;/ext&gt;<br />
+    &lt;ext&gt;JPG&lt;/ext&gt;<br /><br />
+    </span>
+    The extension is not case sensitive. Same restrictions apply with attachments as with standard tickets. If restrictions are met, attachments are ignored. An example of a base64
+    encoded attachment is via the link below.
+    </p>
+    
+    <p class="head">CDATA Tags - (Unparsed) Character Data</p>
+    
+    <p class="info">
+    So that the xml doesn`t invalidate, CDATA tags should be used where applicable. The following characters will invalidate xml if CDATA tags aren`t used:<br /><br />
+    <b>&amp;&nbsp;&nbsp;&lt;&nbsp;&nbsp;&gt;</b><br /><br />
+    All text in an XML document will be parsed by the parser, but text inside a CDATA section will be ignored by the parser. 
+    The term CDATA is used about text data that should not be parsed by the XML parser.<br /><br />
+    A CDATA section starts with &lt;<b>![CDATA[</b> and ends with <b>]]&gt;</b>
+    </p>
+    
+    <p class="head">HTTP Post</p>
+    
+    <p class="info">
+    XML data must be sent to your support system as a <a href="http://en.wikipedia.org/wiki/POST_%28HTTP%29" onclick="window.open(this);return false">HTTP data post</a>. Preferrably url encoded. On successful transmission an xml response is returned:<br /><br />
+    
+    <span class="xmlHighlighter">
+    &lt;?xml version="1.0" encoding="UTF-8"?&gt;<br />
+    &lt;datapost&gt;<br />
+    &nbsp;&nbsp;&lt;status&gt;OK&lt;/status&gt;<br />
+    &lt;/datapost&gt;<br /><br />
+    </span>
+    
+    If an error occurs, the following is returned:<br /><br />
+    
+    <span class="xmlHighlighter">
+    &lt;?xml version="1.0" encoding="UTF-8"?&gt;<br />
+    &lt;datapost&gt;<br />
+    &nbsp;&nbsp;&lt;status&gt;ERROR&lt;/status&gt;<br />
+    &nbsp;&nbsp;&lt;reason&gt;Reason for error..&lt;/reason&gt;<br />
+    &lt;/datapost&gt;<br /><br />
+    </span>
+    
+    Your own application should deal with the response accordingly.
+    </p>
+    
+    <p class="head">Example XML files</p>
+    
+    <p class="info">
+    Click <a href="examples/example-base64.xml" onclick="window.open(this);return false">here</a> to view an example of base64 encoded attachments.<br />
+    Click <a href="examples/example.xml" onclick="window.open(this);return false">here</a> to view an example basic xml file.<br />
+    Click <a href="examples/example-encoded.xml" onclick="window.open(this);return false">here</a> to view the same file url encoded. (<b>Note</b>: Won`t parse as valid xml in xml readers/browsers. View in text editor.)
+    </p>
+    
+    <p class="head">Experimental</p>
+    
+    <p class="info">
+    If you have any comments or suggestions about the API, please let me know.
+    </p>
+    
+  </div>
+  
+</div>  
+
+</div>
+
+<div id="footer">
+  <p class="copyright">
+   <b>Powered by</b>: <a href="http://www.maiansupport.com" title="Maian Support" onclick="window.open(this);return false">Maian Support</a>
+   &copy; 2005-<script type="text/javascript">var d = new Date(); document.write(d.getFullYear());</script> <a href="http://www.maianscriptworld.co.uk" onclick="window.open(this);return false" title="Maian Script World">Maian Script World</a>. All Rights Reserved  </p>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+jQuery(document).ready(function() {
+ jQuery().UItoTop();
+});
+//]]>
+</script>
+</body>
+</html>

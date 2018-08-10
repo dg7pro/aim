@@ -1,0 +1,35 @@
+[10-Aug-2013 18:17:07 America/New_York] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Invalid URI detected.' in /home/alliedin/public_html/libraries/joomla/environment/uri.php:194
+Stack trace:
+#0 /home/alliedin/public_html/libraries/joomla/application/application.php(248): JURI::getInstance()
+#1 /home/alliedin/public_html/includes/application.php(135): JApplication->route()
+#2 /home/alliedin/public_html/index.php(36): JSite->route()
+#3 {main}
+  thrown in /home/alliedin/public_html/libraries/joomla/environment/uri.php on line 194
+[08-Sep-2014 03:11:04 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Invalid URI detected.' in /home/alliedin/public_html/libraries/joomla/environment/uri.php:194
+Stack trace:
+#0 /home/alliedin/public_html/libraries/joomla/application/application.php(248): JURI::getInstance()
+#1 /home/alliedin/public_html/includes/application.php(135): JApplication->route()
+#2 /home/alliedin/public_html/index.php(36): JSite->route()
+#3 {main}
+  thrown in /home/alliedin/public_html/libraries/joomla/environment/uri.php on line 194
+[14-Sep-2014 06:32:04 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Invalid URI detected.' in /home/alliedin/public_html/libraries/joomla/environment/uri.php:194
+Stack trace:
+#0 /home/alliedin/public_html/libraries/joomla/application/application.php(248): JURI::getInstance()
+#1 /home/alliedin/public_html/includes/application.php(135): JApplication->route()
+#2 /home/alliedin/public_html/index.php(36): JSite->route()
+#3 {main}
+  thrown in /home/alliedin/public_html/libraries/joomla/environment/uri.php on line 194
+[16-Sep-2014 19:05:05 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Invalid URI detected.' in /home/alliedin/public_html/libraries/joomla/environment/uri.php:194
+Stack trace:
+#0 /home/alliedin/public_html/libraries/joomla/application/application.php(248): JURI::getInstance()
+#1 /home/alliedin/public_html/includes/application.php(135): JApplication->route()
+#2 /home/alliedin/public_html/index.php(36): JSite->route()
+#3 {main}
+  thrown in /home/alliedin/public_html/libraries/joomla/environment/uri.php on line 194
+[04-Feb-2015 08:27:33 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Invalid URI detected.' in /home/alliedin/public_html/libraries/joomla/environment/uri.php:194
+Stack trace:
+#0 /home/alliedin/public_html/libraries/joomla/application/application.php(248): JURI::getInstance()
+#1 /home/alliedin/public_html/includes/application.php(135): JApplication->route()
+#2 /home/alliedin/public_html/index.php(36): JSite->route()
+#3 {main}
+  thrown in /home/alliedin/public_html/libraries/joomla/environment/uri.php on line 194

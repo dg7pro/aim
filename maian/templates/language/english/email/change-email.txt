@@ -1,0 +1,9 @@
+Hello,
+
+You have successfully changed your email address at "{WEBSITE_NAME}".
+
+Kind regards,
+
+------------------------------------
+{WEBSITE_NAME}
+{WEBSITE_URL}

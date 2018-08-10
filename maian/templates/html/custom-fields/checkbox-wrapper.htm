@@ -1,0 +1,7 @@
+      <div class="boxArea" id="nf_boxes_{id}"> 
+       <label><span class="all"><input type="checkbox" name="boxeschecker" onclick="if(this.checked){selectAllCustomBoxes('nf_boxes_{id}','on');jQuery('#e_custom_{id}').hide('slow');}else{selectAllCustomBoxes('nf_boxes_{id}','off');jQuery('#e_custom_{id}').hide('slow');}" /></span> {label}</label> 
+       <p><input type="hidden" name="hiddenBoxes[]" value="{id}" />
+       {checkboxes}
+       {error}
+       </p>
+      </div> 

@@ -1,0 +1,35 @@
+/*******************************************************************
+* AnyLink Drop Down Menu- © Dynamic Drive (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit http://www.dynamicdrive.com/ for full source code
+* Admin Menu Stylesheet - Maian Support
+********************************************************************/
+
+
+#dropmenudiv {
+  position:absolute;
+  border:1px solid #d7d7d7;
+  border-top:0;
+  font:normal 11px verdana,sans-serif;
+  line-height:35px;
+  z-index:100;
+  text-align:left;
+  margin-top:2px;
+}
+
+#dropmenudiv a {
+  display: block;
+  width:175px;
+  padding:10px 5px 10px 5px;
+  text-decoration: none;
+  font:normal 11px verdana,sans-serif;
+  background:#fff url(images/menu-back.gif) no-repeat;
+  text-indent:5px;
+  color:#415b62;
+  border-bottom:1px solid #d7d7d7;
+}
+
+#dropmenudiv a:hover {
+  background: #F6F6F6;
+  color:#000;
+}

@@ -1,0 +1,21 @@
+        <div class="boxArea">
+         <label>* {msg_newticket27}</label>
+         <div class="recaptcha">
+         <script type="text/javascript">
+         //<![CDATA[
+         var RecaptchaOptions = {
+          theme : 'white',
+          tabindex: '999',
+          lang: 'en'
+         };
+         //]]>
+         </script>
+         <script type="text/javascript" src="{api_url}/challenge?k={public_key}"></script>
+         <noscript>
+         <p>
+         <input type="hidden" name="recaptcha_response_field_fail" value="yes" />
+	       </p>
+         </noscript>
+         {error}
+         </div>
+        </div>

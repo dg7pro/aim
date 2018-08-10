@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=iso-8859-1" />
+<title>Language &amp; Text: Maian Support - Documentation</title>
+<link href="stylesheet.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/menu.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/scrolltotop.js"></script>
+<link href="menu.css" rel="stylesheet" type="text/css" />
+<link rel="SHORTCUT ICON" href="favicon.ico" />
+</head>
+
+<body>
+
+<div id="topBar">
+
+  <div class="inner">
+  
+    <div class="left">
+      <p class="doclinks">Documentation&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
+      <a href="https://www.facebook.com/maianscripts" onclick="window.open(this);return false"><img src="images/facebook.png" alt="Maian Script World on Facebook" title="Maian Script World on Facebook" /></a>
+      <a href="https://twitter.com/#!/maianscripts" onclick="window.open(this);return false"><img src="images/twitter.png" alt="Maian Script World on Twitter" title="Maian Script World on Twitter" /></a>
+      <a href="http://www.youtube.com/user/maianscripts" onclick="window.open(this);return false"><img src="images/youtube.png" alt="Maian Script World on YouTube" title="Maian Script World on YouTube" /></a>
+      <a href="http://www.maiansupport.com/rss.html" onclick="window.open(this);return false"><img src="images/rssfeeds.png" alt="Maian Support Updates" title="Maian Support Updates" /></a>
+      </p>
+    </div>
+  
+    <div class="right">
+      <p>
+      <a href="http://www.maiansupport.com/purchase.html" title="Purchase Full Version" onclick="window.open(this);return false">Purchase Full Version</a> &#8226;
+      <a href="upgrades.html" title="Upgrades">Upgrades</a> &#8226;      
+      <a href="bugs.html" title="Report Bug">Report Bug</a> &#8226;      
+      <a href="other_1.html" title="Support">Support</a> &#8226;
+      <a href="http://www.maianscriptworld.co.uk" title="Other Free Scripts">Other Free Scripts</a>
+      </p>
+    </div>
+  
+  </div>
+  
+  <br class="clear" />
+
+</div>
+
+<div id="header">
+  
+  <div class="left">
+    <p><a href="index.html"><img src="images/logo.png" alt="Maian Support - Documentation" title="Maian Support - Documentation" /></a></p>
+  </div>
+  
+  <div class="right">
+   <p>
+     <span style="color:#354A50;margin:0 0 7px 0">COMMERCIAL VERSION INCLUDES:</span>
+     <span>- FREE upgrades for life</span>
+     <span>- One time payment, NO subscriptions</span>
+     <span>- ALL features unlocked and unlimited</span>
+   </p>
+  </div>
+  
+  <br class="clear" />
+  
+</div>
+
+<div id="wrapper">
+
+<div id="menu">
+ <script type="text/javascript" src="js/nav.js"></script>
+</div>
+
+<div class="homeWrapper">
+
+  <div id="innerArea">
+  
+    <p class="head">Language</p>
+    
+    <p class="info">
+    ALL files related to the default language are found in the following directory:<br /><br />
+    <b>templates/language/english/*</b><br /><br />
+    To create a new language pack, make a copy of the 'english' folder, translate the files and then enable new language in settings. Keep language folder name
+    to lowercase. ie: french, german, finnish etc
+    </p>
+    
+    <p class="head">General Language</p>
+    
+    <p class="info">
+    ALL general language is found in the PHP files in the above folder:<br /><br />
+    <b>templates/language/english/lang1.php<br />templates/language/english/lang2.php</b><br /><br />
+    New files may be added with new releases. Use a good text editor to edit. Notepad should be fine. DO NOT edit in a word processor.
+    </p>
+    
+    <p class="head">E-Mail Template Language</p>
+    
+    <p class="info">
+    All the language in the e-mails is in the e-mail template txt files:<br /><br />
+    <b>templates/language/english/email/*.txt</b><br />
+    <b>templates/language/english/admin-email/*.txt</b><br /><br />
+    Again, use a good text editor to edit.
+    </p>
+    
+    <p class="head">Multi Language Interface</p>
+    
+    <p class="info">
+    It is possible to run multiple languages from the same install. Firstly, you need to enable this via an option in the 'control/user-defined/defined2.inc.php' file:<br /><br />
+    <b>define('LANG_SWITCH_ENABLE', 1);<br />
+    define('LANG_SWITCH_COOKIE', 180);</b><br /><br />
+    You should also set a cookie expiration time in days.<br /><br />
+    Next you need to make copies of the 'templates/language/english/' folder. Once copied, translate files. Lets say you now have:<br /><br />
+    <b>templates/language/english/<br />
+    templates/language/french/<br />
+    templates/language/german/</b><br /><br />
+    Each language is loaded via a 'l' (Lowercase 'L') parameter in the url. If the language doesn`t exist, it will default to your language default setting.<br /><br />
+    So, lets say you have the above 3 languages, 'english','french' &amp; 'german'. Links would be:<br /><br />
+    <b>index.php?l=english</b> (For English)<br />
+    <b>index.php?l=french</b> (For French)<br />
+    <b>index.php?l=german</b> (For German)<br /><br />
+    Where the 'l' value is the folder name for your language in the 'templates/language/' folder. When visitor uses an alternative language, all replies sent from
+    admin will use the corresponding language email templates. Default load language will be the language set in your settings.<br /><br />
+    Language folders MUST contain only letters, numbers and hyphens. If you disable the switch, any cookies set on user machines will auto delete on the next visit.
+    </p>
+    
+    <p class="head">Language Packs</p>
+    
+    <p class="info">
+    Available language packs can be found on the Maian Support <a href="http://www.maiansupport.com" onclick="window.open(this);return false">website</a>. If you would like
+    to submit a new language pack, please email it to me at: support@maianscriptworld.co.uk
+    </p>
+    
+    <p class="head">Help Tips</p>
+    
+    <p class="info">The same or additional information may be provided by hovering your cursor over the <img class="help_img" src="images/help.png" alt="" title="" /> image next to each heading in the admin area if applicable.</p>
+    
+  </div>
+  
+</div>  
+
+</div>
+
+<div id="footer">
+  <p class="copyright">
+   <b>Powered by</b>: <a href="http://www.maiansupport.com" title="Maian Support" onclick="window.open(this);return false">Maian Support</a>
+   &copy; 2005-<script type="text/javascript">var d = new Date(); document.write(d.getFullYear());</script> <a href="http://www.maianscriptworld.co.uk" onclick="window.open(this);return false" title="Maian Script World">Maian Script World</a>. All Rights Reserved  </p>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+jQuery(document).ready(function() {
+ jQuery().UItoTop();
+});
+//]]>
+</script>
+</body>
+</html>

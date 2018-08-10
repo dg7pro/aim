@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=iso-8859-1" />
+<title>Installation: Maian Support - Documentation</title>
+<link href="stylesheet.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/menu.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/scrolltotop.js"></script>
+<link href="menu.css" rel="stylesheet" type="text/css" />
+<link rel="SHORTCUT ICON" href="favicon.ico" />
+</head>
+
+<body>
+
+<div id="topBar">
+
+  <div class="inner">
+  
+    <div class="left">
+      <p class="doclinks">Documentation&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
+      <a href="https://www.facebook.com/maianscripts" onclick="window.open(this);return false"><img src="images/facebook.png" alt="Maian Script World on Facebook" title="Maian Script World on Facebook" /></a>
+      <a href="https://twitter.com/#!/maianscripts" onclick="window.open(this);return false"><img src="images/twitter.png" alt="Maian Script World on Twitter" title="Maian Script World on Twitter" /></a>
+      <a href="http://www.youtube.com/user/maianscripts" onclick="window.open(this);return false"><img src="images/youtube.png" alt="Maian Script World on YouTube" title="Maian Script World on YouTube" /></a>
+      <a href="http://www.maiansupport.com/rss.html" onclick="window.open(this);return false"><img src="images/rssfeeds.png" alt="Maian Support Updates" title="Maian Support Updates" /></a>
+      </p>
+    </div>
+  
+    <div class="right">
+      <p>
+      <a href="http://www.maiansupport.com/purchase.html" title="Purchase Full Version" onclick="window.open(this);return false">Purchase Full Version</a> &#8226;
+      <a href="upgrades.html" title="Upgrades">Upgrades</a> &#8226;      
+      <a href="bugs.html" title="Report Bug">Report Bug</a> &#8226;      
+      <a href="other_1.html" title="Support">Support</a> &#8226;
+      <a href="http://www.maianscriptworld.co.uk" title="Other Free Scripts">Other Free Scripts</a>
+      </p>
+    </div>
+  
+  </div>
+  
+  <br class="clear" />
+
+</div>
+
+<div id="header">
+  
+  <div class="left">
+    <p><a href="index.html"><img src="images/logo.png" alt="Maian Support - Documentation" title="Maian Support - Documentation" /></a></p>
+  </div>
+  
+  <div class="right">
+   <p>
+     <span style="color:#354A50;margin:0 0 7px 0">COMMERCIAL VERSION INCLUDES:</span>
+     <span>- FREE upgrades for life</span>
+     <span>- One time payment, NO subscriptions</span>
+     <span>- ALL features unlocked and unlimited</span>
+   </p>
+  </div>
+  
+  <br class="clear" />
+  
+</div>
+
+<div id="wrapper">
+
+<div id="menu">
+ <script type="text/javascript" src="js/nav.js"></script>
+</div>
+
+<div class="homeWrapper">
+
+  <div id="innerArea">
+  
+    <p class="head">Installation</p>
+    
+    <p class="info">Please read this page carefully and follow any instructions given:</p>
+    
+    <p class="head">System Requirements</p>
+    
+    <p class="info">- Server with PHP4.3 or higher. PHP5+ is recommended.<br />
+    - Ability to run <a href="install_1.html">ionCube</a> encoded files. For PHP5.3 or higher, version 4 loaders are required, else v3 loaders should be fine.<br />
+    - 1 MySQL database to hold the script tables. MySQL5+ is recommended.<br />
+    - <a href="http://php.net/manual/en/book.curl.php" onclick="window.open(this);return false">CURL</a> support enabled for cron override options. If you don`t know what this is, don`t worry.<br />
+    </p>
+    
+    <p class="head">Step 1: Create MySQL Database</p>
+    
+    <p class="info">If you haven`t already done so, create a MySQL database to hold the script tables. An existing database is fine.</p>
+    
+    <p class="head">Step 2: Edit Connection File</p>
+    
+    <p class="info">Using a good quality text editor (NOT a word processor), open the following file:<br /><br />
+    <b>control/connect.inc.php</b><br /><br />
+    Perform the following operations:<br /><br />
+    <span class="highblock">
+    <span class="li">[<b>A</b>] Edit database connection parameters to point to the database you wish to use. Contact your host if you aren`t sure. Prefix is required if you only have a single database. This might be something
+    with an underscore. Its fine to leave the prefix as is, so don`t change if you aren`t sure. See notes in connection file.<br /><br />Example:<br /><br />
+    <span class="highblock">
+    define('DB_HOST', 'localhost');<br />
+    define('DB_USER', 'joeblogs_admin');<br />
+    define('DB_PASS', '12345XX');<br />
+    define('DB_NAME', 'helpdesk');<br />
+    define('DB_PREFIX', 'ms_');
+    </span>
+    </span>
+    <span class="li">[<b>B</b>] Specify character set for database. Can be left blank if preferred. Used for 'Set Character Set' and 'Set Names'. If you aren`t sure, utf8 should be fine. See notes in connection file:<br /><br />
+    <span class="highblock">
+    define('DB_CHAR_SET', 'utf8');
+    </span>
+    </span>
+    <span class="li">[<b>C</b>] Specify locale for your database. Only really required to be changed if your language isn`t English. This will ensure text data in dates converted by MySQL is in your local language. For English, 'en_GB' should be fine for all. See notes in connection file:<br /><br />
+    <span class="highblock">
+    define('DB_LOCALE', 'en_GB');
+    </span>
+    </span>
+    <span class="li">[<b>D</b>] Specify secret key (or salt). This is for security and is encrypted during script execution. Random numbers, letters and characters are recommended. 
+    You can use md5 or sha1 functions for increased security if you wish. See notes in connection file.<br /><br />Examples:<br /><br />
+    <span class="highblock">
+    define('SECRET_KEY', 'fd764%^]h9[-)[87fde');<br />
+    define('SECRET_KEY', md5('fd764%^]h9[-)[87fde'));<br />
+    define('SECRET_KEY', sha1('fd764%^]h9[-)[87fde'));
+    </span>
+    </span>
+    <span class="li">[<b>E</b>] Specify cookie name for admin 'Remember Me' login. This is encrypted during script execution. Random numbers, letters and characters are recommended. Also
+    set expiry time in days and whether cookies should only be set when a SSL certificate is detected. Leave name blank to totally disable the cookie option on admin login. See notes in connection file:<br /><br />
+    <span class="highblock">
+    define('COOKIE_NAME', 'ms-cookie123');<br />
+    define('COOKIE_EXPIRY_DAYS', 30);<br />
+    define('COOKIE_SSL', 0);
+    </span>
+    </span>
+    <span class="li">[<b>F</b>] The option to display MySQL errors should only be enabled if you are having problems. This will display the possible problem. As its a security risk to
+    display MySQL errors because of server paths, this is disabled by default. Instead a simple message appears whenever a MySQL error occurs. Edit as required.<br /><br />
+    <span class="marker">SAVE FILE</span><br /><br />
+    NOTE! At this point you should make sure that the file didn`t save with whitespace before the opening &lt;?php tag or after the closing ?&gt; tag. You should also make sure that your text editor does
+    NOT save with the <a href="http://en.wikipedia.org/wiki/Byte_order_mark" onclick="window.open(this);return false">Bom Byte Order Mark</a>. This can potentially fail PHP files.
+    </span>
+    </span> 
+    </p>
+    
+    <p class="head">Step 3: Transfer Files to Server</p>
+    
+    <p class="info">Using a good FTP program such as the free <a href="http://filezilla-project.org/" onclick="window.open(this);return false">FileZilla</a> or <a href="http://winscp.net" onclick="window.open(this);return false" title="WinSCP">WinSCP</a>, transfer the '<b>helpdesk</b>' folder to your web server.<br /><br />
+    Most good FTP programs auto detect 'ascii' mode for PHP files. However, if you are presented with an option, you should specify 'ascii' and not 'binary'.<br /><br />
+    - 'helpdesk' may be renamed if you wish.<br />
+    - Files can also be uploaded to root of web server if you wish. Open 'helpdesk' folder and transfer files.
+    </p>
+    
+    <p class="head">Step 4: Permissions</p>
+    
+    <p class="info">The following folders are required to have read/write permissions. On Linux 0777 or 0755 should be used:<br /><br />
+    <span class="highblock">
+    <span class="li"><b>
+     admin/export/<br />
+     backups/<br />
+     templates/attachments/<br />
+     templates/attachments/faq/</b>
+    </span>
+    </span><br />
+    For help on how to change permissions on a linux server using Filezilla, click <a href="http://buddingbloggers.com/2009/04/changing-file-permissions-via-filezilla/" onclick="window.open(this);return false">here</a>. 
+    </p>
+    
+    <p class="head">Step 5: Accessing the Installer or Manual Install</p>
+    
+    <p class="info">Once the files have transferred successfully, access the 'install' folder in your browser. An example if your website was at 'example.com/helpdesk/':<br /><br />
+    <span class="highblock">
+    <span class="li"><b>
+     http://www.example.com/helpdesk/install/</b>
+    </span>
+    </span><br />
+    Follow the on screen instructions. At this point if you see an error message related to ionCube, you should refer to the <a href="install_1.html">ionCube</a> section!<br /><br />
+    Alternatively, if you are an advanced user and you are familiar with executing SQL files, run the following file in your MySQL database management program.<br /><br />
+    <span class="highblock">
+    <span class="li"><b>
+     docs/schematic/mysql_5.sql (MySQL 5 or higher)<br />
+     docs/schematic/mysql_4.sql (MySQL 4)</b>
+    </span>
+    </span><br />
+    The following FREE applications can be used to administer MySQL and are all excellent:<br /><br />
+    <span class="highblock">
+    <span class="li">
+     <a href="http://www.heidisql.com" onclick="window.open(this);return false">HeidiSQL</a> <span class="normal">(My software of choice for local administration on Windows and one of the best free pieces of software out there)</span><br />
+     <a href="http://www.phpmyadmin.net" onclick="window.open(this);return false">PHPMyAdmin</a> <span class="normal">(Installed on many servers as the default database software. PHP based.)</span><br />
+     <a href="http://sqlbuddy.com" onclick="window.open(this);return false">SQL Buddy</a> <span class="normal">(Lightweight PHP based software. Great alternative to PHPMyAdmin.)</span><br />
+     <a href="http://dev.mysql.com/doc/query-browser/en/" onclick="window.open(this);return false">MySQL Query Browser</a> <span class="normal">(Alternative Windows based software from the MySQL creators)</span><br />
+     <a href="http://dbeaver.jkiss.org/" onclick="window.open(this);return false">Database Beaver</a> <span class="normal">(Free database management software for Windows)</span>
+    </span>
+    </span> <br />
+    NOTE: If you manually run the 'docs/schematic/*.sql' files you do NOT need to access the install folder!
+    </p>
+    
+    <p class="sechead">SECURITY ALERT</p>
+    
+    <p class="secinfo">If you have successfully run the installer or the SQL file manually you should <b>make absolutely sure</b> that the 'install' directory <b>NO</b> longer exists in your installation. If you wish to keep
+    a copy of it on the server <b>rename it</b> or <b>move it</b> somewhere else.<br /><br />Leaving the 'install' folder in place is a <b>major security risk</b>. Your helpdesk can be compromised if this file is run again. For added security the system will check that this folder does not exist.
+    </p>
+    
+    <p class="head">Step 6: Update Settings / Check Paths</p>
+    
+    <p class="info">Log into your administration area (via the 'admin' folder) using the administrative user details you entered during install. If you ran the manual install option, log in
+    with the following email and password: <br /><br />
+    <span class="highblock">
+    <span class="li">
+     <b>E-Mail</b>: admin@email.com<br />
+     <b>Pass</b>: admin
+    </span>
+    </span><br />
+    An example if your website was at 'example.com/helpdesk/':<br /><br />
+    <span class="highblock">
+    <span class="li"><b>
+     http://www.example.com/helpdesk/admin/</b>
+    </span>
+    </span><br />
+    From the main menu select/click the following:<br /><br />
+    <span class="highblock">
+    <span class="li"><b>
+     Settings</b>
+    </span>
+    </span><br />
+    Check the paths for 'HTTP Installation Path' &amp; 'Server Path to Attachments Folder' are correct. The installer will have attempted to calculate these. If they haven`t or you ran the SQL
+    file manually, these paths MUST be correct.<br /><br />
+    You should also update any other settings to suit your requirements. Most options can remain as is for testing as the defaults should be fine.
+    </p>
+    
+    <p class="head">Step 7: Crontabs/Cronjobs</p>
+    
+    <p class="info">
+    The following files (in the root of your installation) should be set up to run as automated tasks:<br /><br />
+    <b>close-tickets.php</b> - Auto closes tickets. More info <a href="cron.html">here</a>.<br />
+    <b>db-backup.php</b> - Database backup. More info <a href="tools_5.html">here</a>.<br />
+    <b>email-digest.php</b> - Email digest with ticket info. More info <a href="install_7.html">here</a>.
+    </p>
+    
+    <p class="head">Step 8: SMTP Settings</p>
+    
+    <p class="info">SMTP is optional, but is recommended for the best performance. Maian Support utilises the <a href="http://phpmailer.worxware.com/" onclick="window.open(this);return false">PHP Mailer</a> system for SMTP. To enable
+    SMTP in the system, access your settings main page:<br /><br />
+    <span class="highblock">
+    <span class="li"><b>
+     Settings > SMTP Settings
+     </b>
+    </span>
+    </span><br />
+    If you are testing on localhost and don`t have mail enabled, you may need to totally disable system e-mails while testing. Do this by going
+    to the following file:<br /><br />
+    <span class="highblock">
+    <span class="li">
+     <b>
+     control/user-defined/defined.php
+     </b>
+    </span>
+    </span><br />
+    Set 'ACTIVATE_EMAILS' to 0. Remember to set it back to 1, when testing on a live server.
+    </p>
+    
+    <p class="head">Step 9: Update Administrative User for Manual Install</p>
+    
+    <p class="info">If you ran the manual install option, make sure you update the username, email &amp; password for this user. To do this access 'Users' in your admin area and click
+    edit on the administrative user edit link. Only a single user would exist at this point.
+    </p>
+    
+    <p class="head">Step 10: Add Additional Support Team Members/Users</p>
+    
+    <p class="info">If required, add more support team members. For user help, click <a href="users.html">here</a>.</p>
+    
+    <p class="head">Step 11: Rename administration folder</p>
+    
+    <p class="info">For security it is highly recommended you rename your 'admin' folder. To do this perform the following operations:<br /><br />
+    <span class="highblock">
+    <span class="li">[<b>A</b>] Manually rename the 'admin' folder to something unique. Letters, numbers, underscores or hyphens should be used, no special characters.</span>
+    <span class="li">[<b>B</b>] Access the following page in your administration area via the main menu:
+    <b>SETTINGS</b><br />
+    </span>
+    <span class="li">[<b>C</b>] Enter your new folder name in the option 'Admin Folder Name'.</span>
+    </span>
+    </p>
+    
+    <p class="head">Step 12: Getting Started</p>
+    
+    <p class="info">Now that the system is installed, see the 'Portal' section above for an overview of the frontend ticket interface.<br /><br />
+    Departments are all thats required to get the system ready for testing, once you have added 1 or more departments give the system a run through. Maian Support
+    offers a powerful, yet simple set of features for a fast, reliable help desk system. You`ll find links to relevant help pages via the 'Help' link in admin, which
+    is found at the very top of the page.
+    </p>
+    
+    <p class="head">Step 13: Templates/Colours/Images</p>
+    
+    <p class="info">Once you are getting familiar with the system, see the '<a href="install_3.html">Templates</a>' section for help on adapting the layout into an existing website or changing colours.</p>
+    
+    <p class="head">Step 14: Language &amp; Text</p>
+    
+    <p class="info">See the <a href="install_4.html">Language &amp; Text</a> section for further assistance.</p>
+    
+    <p class="head">Step 15: User Defined Options</p>
+    
+    <p class="info">There are many other options that can be changed from within the script which may be of some use. This is for advanced users.<br /><br />
+    See the <a href="install_5.html">User Defined Options</a> section for further assistance.</p>
+    
+    <p class="head">Step 16: Comments/Feedback</p>
+    
+    <p class="info">If you have comments or feedback about this system, I would very much like to hear your comments. Use the contact option on the Maian
+    Support website.</p>
+    
+  </div>
+  
+</div>  
+
+</div>
+
+<div id="footer">
+  <p class="copyright">
+   <b>Powered by</b>: <a href="http://www.maiansupport.com" title="Maian Support" onclick="window.open(this);return false">Maian Support</a>
+   &copy; 2005-<script type="text/javascript">var d = new Date(); document.write(d.getFullYear());</script> <a href="http://www.maianscriptworld.co.uk" onclick="window.open(this);return false" title="Maian Script World">Maian Script World</a>. All Rights Reserved  </p>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+jQuery(document).ready(function() {
+ jQuery().UItoTop();
+});
+//]]>
+</script>
+</body>
+</html>

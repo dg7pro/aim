@@ -1,0 +1,31 @@
+Hi {NAME},
+
+A reply has now been made to the following support ticket:
+
+"{SUBJECT_OLD}"
+
+Note: Because of its similar nature, this ticket has been merged to the following ticket.
+
+Ticket ID: #{TICKET}
+Subject: {SUBJECT}
+Department: {DEPT}
+Priority: {PRIORITY}
+Status: {STATUS}
+
+Comments by {USER}:
+--------------------------------
+
+{COMMENTS}
+
+If this ticket was closed or locked previously, it has now been re-opened.
+
+To view your ticket or add a new response, log in to your ticket portal at:
+{WEBSITE_URL}/?t={ID}
+
+Thank you,
+
+------------------------------------
+{SIGNATURE}
+
+{WEBSITE_NAME}
+{WEBSITE_URL}

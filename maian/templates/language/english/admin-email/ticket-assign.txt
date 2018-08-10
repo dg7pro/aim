@@ -1,0 +1,16 @@
+Hi {NAME},
+
+One or more tickets have now been assigned to you by {ASSIGNEE}.
+
+Please respond to these tickets as soon as possible, thank you.
+
+Administration Login:
+{WEBSITE_URL}/{ADMIN_FOLDER}/
+
+Thank you,
+
+------------------------------------
+{SIGNATURE}
+
+{WEBSITE_NAME}
+{WEBSITE_URL}

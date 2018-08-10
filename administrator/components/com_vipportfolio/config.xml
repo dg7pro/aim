@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset name="general" label="COM_VIPPORTFOLIO_GENERAL_TITLE" description="COM_VIPPORTFOLIO_GENERAL_PARAMS">
+        <field name="cat_breadcrumbs" type="radio" default="0"  label="COM_VIPPORTFOLIO_CAT_BREADCRUMBS" description="COM_VIPPORTFOLIO_CAT_BREADCRUMBS_DESC" >
+           <option value="0">JNO</option>
+           <option value="1">JYES</option>
+       </field>
+       <field name="catDesc" type="radio" default="0"  label="COM_VIPPORTFOLIO_CAT_DESCRIPTIOON" description="COM_VIPPORTFOLIO_CAT_DESCRIPTIOON_DESC" >
+           <option value="0">JNO</option>
+           <option value="1">JYES</option>
+       </field>
+       <field name="joomla_plugins" type="radio" default="0"  label="COM_VIPPORTFOLIO_JOOMLA_PLUGINS" description="COM_VIPPORTFOLIO_JOOMLA_PLUGINS_DESC" >
+           <option value="0">JNO</option>
+           <option value="1">JYES</option>
+       </field>
+	</fieldset>
+	
+	<fieldset name="images" label="COM_VIPPORTFOLIO_IMAGES_TITLE" description="COM_VIPPORTFOLIO_IMAGES_PARAMS">
+        <field name="images_directory" type="text" default="images/vipportfolio" size="50" label="COM_VIPPORTFOLIO_IMAGES_DIRECTORY" description="COM_VIPPORTFOLIO_IMAGES_DIRECTORY_DESC" />
+	</fieldset>
+    
+</config>

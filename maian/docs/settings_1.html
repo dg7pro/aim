@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=iso-8859-1" />
+<title>General Settings: Maian Support - Documentation</title>
+<link href="stylesheet.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/menu.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/scrolltotop.js"></script>
+<link href="menu.css" rel="stylesheet" type="text/css" />
+<link rel="SHORTCUT ICON" href="favicon.ico" />
+</head>
+
+<body>
+
+<div id="topBar">
+
+  <div class="inner">
+  
+    <div class="left">
+      <p class="doclinks">Documentation&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
+      <a href="https://www.facebook.com/maianscripts" onclick="window.open(this);return false"><img src="images/facebook.png" alt="Maian Script World on Facebook" title="Maian Script World on Facebook" /></a>
+      <a href="https://twitter.com/#!/maianscripts" onclick="window.open(this);return false"><img src="images/twitter.png" alt="Maian Script World on Twitter" title="Maian Script World on Twitter" /></a>
+      <a href="http://www.youtube.com/user/maianscripts" onclick="window.open(this);return false"><img src="images/youtube.png" alt="Maian Script World on YouTube" title="Maian Script World on YouTube" /></a>
+      <a href="http://www.maiansupport.com/rss.html" onclick="window.open(this);return false"><img src="images/rssfeeds.png" alt="Maian Support Updates" title="Maian Support Updates" /></a>
+      </p>
+    </div>
+  
+    <div class="right">
+      <p>
+      <a href="http://www.maiansupport.com/purchase.html" title="Purchase Full Version" onclick="window.open(this);return false">Purchase Full Version</a> &#8226;
+      <a href="upgrades.html" title="Upgrades">Upgrades</a> &#8226;      
+      <a href="bugs.html" title="Report Bug">Report Bug</a> &#8226;      
+      <a href="other_1.html" title="Support">Support</a> &#8226;
+      <a href="http://www.maianscriptworld.co.uk" title="Other Free Scripts">Other Free Scripts</a>
+      </p>
+    </div>
+  
+  </div>
+  
+  <br class="clear" />
+
+</div>
+
+<div id="header">
+  
+  <div class="left">
+    <p><a href="index.html"><img src="images/logo.png" alt="Maian Support - Documentation" title="Maian Support - Documentation" /></a></p>
+  </div>
+  
+  <div class="right">
+   <p>
+     <span style="color:#354A50;margin:0 0 7px 0">COMMERCIAL VERSION INCLUDES:</span>
+     <span>- FREE upgrades for life</span>
+     <span>- One time payment, NO subscriptions</span>
+     <span>- ALL features unlocked and unlimited</span>
+   </p>
+  </div>
+  
+  <br class="clear" />
+  
+</div>
+
+<div id="wrapper">
+
+<div id="menu">
+ <script type="text/javascript" src="js/nav.js"></script>
+</div>
+
+<div class="homeWrapper">
+
+  <div id="innerArea">
+  
+    <p class="head">Overview</p>
+    
+    <p class="info">General settings are available to manage certain features.</p>
+    
+    <p class="head">Help Desk Name</p>
+    
+    <p class="info">The name of your website or ticket system. Max 150 chars.</p>
+    
+    <p class="head">E-Mail 'From' Address</p>
+    
+    <p class="info">E-mail 'From' address that appears when any e-mails are sent. This may need to be a valid e-mail on some servers.</p>
+    
+    <p class="head">HTTP Installation Path</p>
+    
+    <p class="info">Full HTTP path to your ticket installation. NO slash at the end.<br /><br /><b>Example</b>:<br />http://www.yoursite.com/tickets</p>
+    
+    <p class="head">Software Language</p>
+    
+    <p class="info">Select software language. For more information on language packs and language in general, click <a href="install_4.html">here</a>.</p>
+    
+    <p class="head">PHP Date/Time Format</p>
+    
+    <p class="info">Preferred PHP date/time format. If you are unsure of this leave it as it is. For more information and to see which symbols can be used view the <a href="http://php.net/manual/en/function.date.php" onclick="window.open(this);return false">PHP website</a>.</p>
+    
+    <p class="head">Timezone</p>
+    
+    <p class="info">Default timezone. Edit timezones in 'control/timezones.php' if required.<br /><br />Utilises the PHP5 datetime class, which has better
+    support for timezones, including daylight saving. Legacy support is included for PHP4, but daylight saving will not function automatically.</p>
+    
+    <p class="head">Auto Close Tickets</p>
+    
+    <p class="info">Do you want the system to auto close tickets/disputes that are awaiting a visitor reply, but haven`t been replied to for X amount of days? Set to 0 to disable or enter amount in days. Example: 50<br /><br />
+    Note: If a ticket is opened again on the same day it is closed, it will remain open for the duration of that day and if no further replies are added, will again auto close the following day.<br /><br />
+    Check notification box to send email notification to visitor. If a dispute is open, notification is sent to everyone in the dispute.<br /><br />
+    <b>IMPORTANT</b>: For this feature to run, you need to set up a cron job to auto parse the 'close-tickets.php' file in your installation. More info <a href="cron.html">here</a>.
+    </p>
+    
+    <p class="head">Enable BB Code</p>
+    
+    <p class="info">Do you wish to enable BBCode? BBCode or Bulletin Board Code is a lightweight markup language used to format data. The available tags are usually indicated by square brackets ([]) surrounding a keyword, and are parsed before being translated into a markup language that web browsers understand. Examples:<br /><br />[b]Bold Text[b] = <b>Bold Text</b><br />[link=http://www.google.co.uk]Google[/link] = <a href="http://www.google.co.uk">Google</a><br /><br />BBCode was devised to provide a safer, easier and more limited way of allowing users to format their messages.<br /><br />Text &copy;Wikipedia<br /><br />
+    Note that BBCode is not parsed in email templates.</p>
+    
+    <p class="head">Portal Tickets Per Page</p>
+    
+    <p class="info">How many tickets to show per page for visitors in their ticket portal? Must be at least 1. High amounts may cause pages to load slower.</p>
+    
+    <p class="head">XML-RPC API Key</p>
+    
+    <p class="info">If you are utilising the XML-RPC data post API option to create tickets from other applications, enter API key. This is to ensure data coming in is valid. Key should be numbers, letters &amp; hyphens ONLY and a max of 100 characters.<br /><br />Use the auto create option if preferred by clicking 'Generate Key'.</p>
+    
+    <p class="head">Start Day for Week</p>
+    
+    <p class="info">Specify your preferred start day for the week. This is for the javascript pop up calendar. For example, UK is Sunday.</p>
+    
+    <p class="head">Javascript Calendar Date Format</p>
+    
+    <p class="info">When date input form fields are clicked, a javascript calendar appears. When a date is clicked on the calendar, this transfers to the input box. Specify preferred date format.</p>
+    
+    <p class="head">Admin Folder Name</p>
+    
+    <p class="info">For security you should rename your admin folder. If you rename it, specify the new name here so the correct path appears in emails. Folder name should NOT contain invalid characters. Alphanumeric, hyphens and underscores are recommended.</p>
+    
+    <p class="head">Help Desk Status</p>
+    
+    <p class="info">Enable or disable help desk system.</p>
+    
+    <p class="head">Auto Enable on Date</p>
+    
+    <p class="info">If the system is disabled, do you wish to auto enable it on any given date?</p>
+    
+    <p class="head">reCaptcha Private &amp; Public Key</p>
+    
+    <p class="info">reCaptcha is a free service from Google to prevent bots from auto submitting forms. Click "Create Keys" to create a free account. After you have signed up for your free account, enter your <b>private key</b> and <b>public key</b> in the relevant boxes.<br /><br />To disable spam prevention measures in this software, leave both boxes blank. More info about reCaptcha <a href="google.html">here</a>.</p>
+    
+    <p class="head">reCaptcha - Disable if User is Logged In</p>
+    
+    <p class="info">Do you wish to disable the captcha if the user is logged into their ticket portal? Its unlikely bots would attack a form behind a password protected area, so this can be disabled if you wish.</p>
+    
+    <p class="head">Enable Attachments</p>
+    
+    <p class="info">Do you want to enable attachments so visitors can include files with their tickets? Note that disabling this feature does not disable attachments for admin responses.</p>
+    
+    <p class="head">Allowable File Extensions</p>
+    
+    <p class="info">If enabled, specify allowed file extensions. This must be the extension (including period or dot) separated with a pipe. Enter as many as you need. Extensions are NOT case sensitive.<br /><br /><b>Examples</b>:<br />.jpg|.zip|.rar<br />.Jpg|.ZIP|.RaR<br /><br />Leave blank for no restrictions (NOT recommended).</p>
+    
+    <p class="head">Max Size for Attachments</p>
+    
+    <p class="info">Maximum file size for attachments. In Bytes.<br /><br /><b>Examples</b>:<br />1024*1024 = 1048576 = 1MB (You enter <b>1048576</b>)<br />1024*200 = 204800 = 200KB (You enter <b>204800</b>)<br /><br />Set to 0 for no limit or use the calculator for help by clicking <img style="vertical-align:bottom" src="images/calculator.gif" alt="" title="" /> (See Below)<br /><br />
+    <img src="images/helpdesk/60.jpg" class="sysimg" alt="" title="" />
+    </p>
+    
+    <p class="head">Total Attachment Boxes</p>
+    
+    <p class="info">Total attachment boxes to display on ticket page. For example, if you entered 5, visitor could include a maximum of 5 attachments per ticket. Restricted to 1 box in the free version.</p>
+    
+    <p class="head">Server Path to Attachments Folder</p>
+    
+    <p class="info">Full server path to your attachments directory. This should be auto calculated on install. NO slash at the end. If you are unsure of your server path, contact your host.<br /><br /><b>Examples</b>:<br />/home/server/public_html/tickets/templates/attachments (Linux)<br />C:\windows\path\tickets\templates\attachments (Windows)</p>
+    
+    <p class="head">Rename Attachments</p>
+    
+    <p class="info">Do you wish to rename attachments on upload? Can resolve issues where invalid characters are used in file names.</p>
+    
+    <p class="head">Enable F.A.Q</p>
+    
+    <p class="info">Do you wish to enable the frequently asked questions?</p>
+    
+    <p class="head">Total Popular Questions</p>
+    
+    <p class="info">The F.A.Q main page shows the most popular questions. This is determined by most votes, not visits. How many popular questions do you want to show?</p>
+    
+    <p class="head">Enable Voting System</p>
+    
+    <p class="info">Do you wish to enable the voting system? This is useful for admin to see which questions have proved useful and which haven`t. Enable or disable depending on your preference.</p>
+    
+    <p class="head">Cookie Duration (in Days)</p>
+    
+    <p class="info">If multiple votes aren`t allowed, a cookie is set. Specify the duration IN DAYS before this cookie expires.</p>
+    
+    <p class="head">Enable Multiple Votes</p>
+    
+    <p class="info">The voting system enables a webmaster to see if questions have been helpul or not. Do you want visitors to be able to vote multiple times? This is fairly pointless, but can be enabled if required.</p>
+    
+    <p class="head">Questions Per Page</p>
+    
+    <p class="info">How many questions do you wish to display per page for a F.A.Q category?</p>
+    
+    <p class="head">Enable SMTP</p>
+    
+    <p class="info">Do you wish to enable SMTP to send e-mails? Some servers restrict the PHP function sending to addresses outside of the domain, so this is required. Generally SMTP should be enabled for better performance.<br /><br />Some servers require authentication via username/password.</p>
+    
+    <p class="head">SMTP Host</p>
+    
+    <p class="info">Enter SMTP host. This can be your server IP, localhost or mail server address.<br /><br /><b>Examples</b>:<br />localhost<br />mail.yoursite.com<br />smtp.yoursite.com<br />127.0.0.1</p>
+    
+    <p class="head">SMTP Username</p>
+    
+    <p class="info">Enter SMTP username if required. This is usually your e-mail address.</p>
+    
+    <p class="head">SMTP Password</p>
+    
+    <p class="info">Enter SMTP mail password if required.</p>
+    
+    <p class="head">SMTP Port</p>
+    
+    <p class="info">Enter SMTP port number. Usually 25 or 26. Can also be your submission port, ie: 587. If you are unsure, contact your host.</p>
+    
+    <p class="head">Admin Footer/Public Footer</p>
+    
+    <p class="info">These options only appear if you have purchased a commercial licence. Enter your own footer data. This will replace the default footer info. HTML may be used here if required.</p>
+    
+    <p class="head">Help Tips</p>
+    
+    <p class="info">The same or additional information may be provided by hovering your cursor over the <img class="help_img" src="images/help.png" alt="" title="" /> image next to each heading in the admin area if applicable.</p>
+    
+  </div>
+  
+</div>  
+
+</div>
+
+<div id="footer">
+  <p class="copyright">
+   <b>Powered by</b>: <a href="http://www.maiansupport.com" title="Maian Support" onclick="window.open(this);return false">Maian Support</a>
+   &copy; 2005-<script type="text/javascript">var d = new Date(); document.write(d.getFullYear());</script> <a href="http://www.maianscriptworld.co.uk" onclick="window.open(this);return false" title="Maian Script World">Maian Script World</a>. All Rights Reserved  </p>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+jQuery(document).ready(function() {
+ jQuery().UItoTop();
+});
+//]]>
+</script>
+</body>
+</html>

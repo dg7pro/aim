@@ -1,0 +1,10 @@
+      <div class="boxArea" >  
+       <label>{label}</label>
+       <p>
+       <select name="customField[{id}]" tabindex="{tab}" onchange="if(this.value!='nothing-selected'){jQuery('#e_custom_{id}').hide('slow')}">
+        <option value="nothing-selected">- - - - - - -</option>
+        {options}
+       </select>
+       {error}
+       </p>
+      </div>

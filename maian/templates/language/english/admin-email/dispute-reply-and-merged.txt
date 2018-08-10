@@ -1,0 +1,31 @@
+Hi {NAME},
+
+A reply has now been made to the following dispute:
+
+"{SUBJECT_OLD}"
+
+Note: Because of its similar nature, this dispute has been merged to the following dispute.
+
+Dispute ID: #{TICKET}
+Subject: {SUBJECT}
+Department: {DEPT}
+Priority: {PRIORITY}
+Status: {STATUS}
+
+Comments by {USER}:
+--------------------------------
+
+{COMMENTS}
+
+If this dispute was closed or locked previously, it has now been re-opened.
+
+To view your dispute or add a new response, log in to your ticket portal at:
+{WEBSITE_URL}/?d={ID}
+
+Thank you,
+
+------------------------------------
+{SIGNATURE}
+
+{WEBSITE_NAME}
+{WEBSITE_URL}

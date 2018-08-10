@@ -1,0 +1,25 @@
+Hi {NAME},
+
+A reply has now been made to the following support ticket:
+
+Ticket ID: #{TICKET}
+Subject: {SUBJECT}
+Department: {DEPT}
+Priority: {PRIORITY}
+Status: {STATUS}
+
+Comments by {USER}:
+--------------------------------
+
+{COMMENTS}
+
+To view your ticket or add a new response, log in to your ticket portal at:
+{WEBSITE_URL}/?t={ID}
+
+Thank you,
+
+------------------------------------
+{SIGNATURE}
+
+{WEBSITE_NAME}
+{WEBSITE_URL}
